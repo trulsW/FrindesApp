@@ -20,7 +20,7 @@ const model = {
 // inputs: alt som påvirkes av bruker.    
     inputs: {
         
-        editNewUser: [
+        editNewUser: 
             {
                 firstName: '',
                 lastName: '',   
@@ -32,7 +32,7 @@ const model = {
                 mail: '', 
                 aboutMe: '',
             },
-            ],
+            
        
             edit: {
              Name: '',
