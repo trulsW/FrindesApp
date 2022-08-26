@@ -28,7 +28,7 @@ model.users = [
     {
       //dummy
       // chat:[{id:1,text:"hei"},{id:2,text:"hei"}],
-     personId: 1,   
+     personId: '',   
      firstName: 'firstName_d1',
      lastName: 'lastName_d1',  
      userName: '11',
@@ -49,7 +49,7 @@ model.users = [
     
     {
       //dummy
-     personId: 2,   
+     personId: '',   
      firstName: 'firstName_d2',
      lastName: 'lastName_d2',  
      userName: '22',
@@ -70,7 +70,7 @@ model.users = [
 
    {
       //dummy
-    personId: 3,   
+    personId: '',   
     firstName: 'firstName_d3',
     lastName: 'lastName_d3',  
     userName: '33',
@@ -91,7 +91,7 @@ model.users = [
 
       {
          //dummy
-         personId: 4,   
+         personId: '',   
          firstName: 'firstName_d4',
          lastName: 'lastName_d4',  
          userName: '44',

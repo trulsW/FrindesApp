@@ -7,9 +7,12 @@
     <title>Document</title>
     <script src="model.js"></script>
     <script src="modelUser.js"></script>
+    <script src="common.js"></script>
     <script src="loginView.js"></script>
-    <script src="mainView.js"></script>
-    <script src="logInController.js"></script>
+    <script src="myProfileView.js"></script>
+    <script src="mapViewPage.js"></script>
+    <script src="mapViewController.js"></script>
+    <script src="superController.js"></script>
 </head>
 <body>
     <div id="app"></div>
@@ -20,8 +23,9 @@
         function updateView() {
         if(model.app.currentPage == "login")  html = updateViewLogInView();
         if(model.app.currentPage == "register") html = updateViewRegisterView();
-        if(model.app.currentPage == "mainPage") html = updateViewMainView();
-        if(model.app.currentPage == "juserView") html = updateViewuserView();
+        if(model.app.currentPage == "myProfileView") html = updateViewProfileView();
+        if(model.app.currentPage == "userView") html = updateViewuserView();
+        if(model.app.currentPage == "mapView") html = updateViewMapView();
         
         document.getElementById("app").innerHTML = html;
     }

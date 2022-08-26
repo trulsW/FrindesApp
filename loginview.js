@@ -10,7 +10,7 @@ function updateViewLogInView(){
     <input type='text' oninput="model.inputs.login.passWord=this.value"> Password:  <br><br><br>
     
     <button onclick="checkLogin()">Login</button>
-    <button onclick="register()">REGISTER</button>
+    <button onclick="register()">Registrer</button>
     
     `;
 

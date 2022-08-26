@@ -1,4 +1,4 @@
-function updateViewMainView(){
+function updateViewProfileView(){
     
      
     let html = '';
@@ -17,6 +17,7 @@ function updateViewMainView(){
         <button onclick="myBio()">Om meg</button>
         ${ /* Være sentertmitpå nederst på siden */'' }
         <button onclick="changeProfil()">Endre profil</button>
+       
 
         
  
