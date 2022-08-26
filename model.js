@@ -9,12 +9,12 @@
 
 
 
-
 const model = {
 // app: appens tillstand: sidebyte, 
     app: {
         currentPage: 'login', // map, requests, profile
         currentUser: 1,
+        // listOfPages: ["login", "mainPage", "registerPage"]
     },
 
 // inputs: alt som påvirkes av bruker.    

@@ -9,6 +9,7 @@
     <script src="modelUser.js"></script>
     <script src="loginView.js"></script>
     <script src="mainView.js"></script>
+    <script src="logInController.js"></script>
 </head>
 <body>
     <div id="app"></div>
@@ -17,8 +18,12 @@
     <script>
         updateView();
         function updateView() {
-        if(model.app.currentPage === 'login') {updateViewLogInView()};
-    
+        if(model.app.currentPage == "login")  html = updateViewLogInView();
+        if(model.app.currentPage == "register") html = updateViewRegisterView();
+        if(model.app.currentPage == "mainPage") html = updateViewMainView();
+        if(model.app.currentPage == "juserView") html = updateViewuserView();
+        
+        document.getElementById("app").innerHTML = html;
     }
      
         
