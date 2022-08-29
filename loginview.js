@@ -5,20 +5,46 @@ function updateViewLogInView(){
 
     
     html += /*html*/ `
+
     
-    <input type="text" oninput="model.inputs.login.userName=this.value" > Brukernavn: <br>
-    <input type='text' oninput="model.inputs.login.passWord=this.value"> Password:  <br><br><br>
+
+    <form class="box" action="index.html" method="post">
+
+   
+
+   
     
-    <button onclick="checkLogin()">Login</button>
-    <button onclick="register()">Registrer</button>
+    <input type="text" oninput="model.inputs.login.userName=this.value" placeholder="Username">
+    <input type='text' oninput="model.inputs.login.passWord=this.value" placeholder="password">
+    
+    <div class="Loginn" onclick="checkLogin()">
+    <p style="color:White;">Login</p>
+    </div>
+     
+    <div class="Register" onclick="register()">
+    <p style= "color:White;">Register</p>
+    </div>
+
+    
+     
+     ${ /*<input type="submit" name="" value="Login">*/'' }
+
+
+
+
+</form>
+
     
     `;
 
 
 return html;
 
-
 };
+ 
+
+
+
 
 
 
