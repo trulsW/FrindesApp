@@ -25,39 +25,37 @@
         flex-direction: column;
         list-style: none;
         height: 100%;
-        width: 60px;
+        width: 70px;
         position: fixed;
         top:0; left:0;
-        background-color: none;
-        
+        background-color: grey;
         justify-content: space-evenly;
+        border-right: solid black 2px;
     }
 
-    ul button{
-        size: 10px;
+    .PVBtn{
+        border-top: solid black 2px;
+        border-bottom: solid black 2px;
     }
     ul li{
         margin: 5px;
         padding: 5px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        border: solid white 1px;
         display: flex;
         justify-content: center;
-        box-shadow: 2px 0px 5px black;
-        
     }
 
     ul li a{
         color: white;
         text-decoration: none;
         font-size: 20px;
-        padding: 5px;
+        padding: 10px;
+
     }
 
     ul li a:hover{
         background-color: white;
         color: rgb(31, 18, 18);
+        object-fit: contain;
     }
     
 

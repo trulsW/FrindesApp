@@ -11,8 +11,9 @@
     <script src="loginView.js"></script>
     <script src="myProfileView.js"></script>
     <script src="mapViewPage.js"></script>
-    <script src="mapViewController.js"></script>
     <script src="superController.js"></script>
+    <script src="homeView.js"></script>
+    <!-- alel script ever her! -->
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleLogin.css">
@@ -28,7 +29,6 @@
         if(model.app.currentPage == "login")  html = updateViewLogInView();
         if(model.app.currentPage == "register") html = updateViewRegisterView();
         if(model.app.currentPage == "myProfileView") html = updateViewProfileView();
-        if(model.app.currentPage == "userView") html = updateViewuserView();
         if(model.app.currentPage == "mapView") html = updateViewMapView();
         
         document.getElementById("app").innerHTML = html;

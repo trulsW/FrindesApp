@@ -1,3 +1,29 @@
+// //tullemodell
+// let activeView = "home";
+
+// //tulleview
+// let brødtekst = "";
+// function selectActiveView(){
+//     if(activeView == "home"){
+//         brødtekst= makeHomeHTML();
+//     }
+//     else if(activeView== "map"){
+//         brødtekst = makeBrødtekstHTML();
+//     }
+//     else if(activeView== "alerts"){
+//         brødtekst =
+//     }
+// }
+
+// function makeHomeHTML(){
+//     return"<div> button etc.. tekst hei hå </div>"
+// }
+
+// function makeBrødtekstHTML(){
+//     return"<div> button etc.. tekst hei hå </div>"
+// }
+
+
 function updateViewProfileView(){
     
      
@@ -28,37 +54,25 @@ function updateViewProfileView(){
     <ul>
 
    
-        <button style="background-color:#dc143c;" onclick="myFriends()">
-
+        <div class="PVBtn" style="background-color:#dc143c;" onclick="myFriends()">
              <li><a href="#section1">🏠</a></li>
-           
+        </div> 
 
-        </button> 
-      
-
-        <button style="background-color:#dc143c;" onclick="goToMap()">
-
+        <div class="PVBtn" style="background-color:#dc143c;" onclick="goToMap()">
             <li><a href="#section2">🗺️</a></li>
+        </div>
 
-        </button>
+        <div class="PVBtn" style="background-color:#dc143c;" onclick="newFrindes()">
+            <li><a href="#section3">💌</a></li> 
+        </div>  
 
-        <button style="background-color:#dc143c;" onclick="newFrindes()">
-
-            <li><a href="#section3">💌</a></li>
-       
-        </button>  
-
-        <button style="background-color:#dc143c;" onclick="varsel()">
-
+        <div class="PVBtn" style="background-color:#dc143c;" onclick="varsel()">
             <li><a href="#section4">🔔</a></li>
+        </div>
 
-        </button>
-
-        <button style="background-color:#dc143c;" onclick="innstillinger()">
-            
+        <div class="PVBtn" style="background-color:#dc143c;" onclick="innstillinger()">   
             <li><a href="#section5">⚙</a></li>
-
-        </button>
+        </div>
 
 
  
