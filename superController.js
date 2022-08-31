@@ -1,18 +1,17 @@
 
 
-// Dette er for loginController
-
+// Login Check, compairing usernames and passwords
 function checkLogin(){
     
     let userLogin = model.inputs.login;
 
     for(let i = 0; i <model.users.length; i++) {
         // console.log(model.users[i]);
+        
         let user = model.users[i]
             if(model.inputs.login.userName === model.users[i].userName && model.inputs.login.passWord === model.users[i].passWord) {
-               
-                console.log('username match');
-                console.log(user);
+                console.log('-------- Username & Password check --------');
+                console.log({user});
                 model.app.currentUser = model.users[i].personId
                 model.app.currentPage = 'myProfileView'; 
                 updateView();
@@ -31,7 +30,34 @@ function checkLogin(){
 
 // Dette er for mapViewController
 
-        function goToMap(){
-                model.app.currentPage = 'mapView';
-                updateView();
-        }
+function goToMap(){
+    model.app.currentPage = 'mapView';
+    updateView();
+}
+
+function goToRegister() {
+    // endre side vi skal til.
+    model.app.currentPage = 'register'
+    // så kjører vil til index,if-statements for å sjekke hvem side vi skal ende på.
+    updateView()
+}
+// Dette er får dine nye venner boks
+function intrest(){
+    model.app.currentPage = 'matchBox'
+    updateView();
+}
+
+function aboutMe(){
+    model.app.currentPage = 'bio'
+    updateView();
+}
+
+function editProfil(){
+    model.app.currentPage = 'changeProfil'
+    updateView();
+}
+function myFrindes(){
+    model.app.currentPage = 'newFrindes'
+    updateView();
+
+}

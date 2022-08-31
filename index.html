@@ -7,38 +7,40 @@
     <title>Document</title>
     <script src="model.js"></script>
     <script src="modelUser.js"></script>
-    <script src="common.js"></script>
-    <script src="loginView.js"></script>
-    <script src="myProfileView.js"></script>
-    <script src="mapViewPage.js"></script>
     <script src="superController.js"></script>
-    <script src="homeView.js"></script>
-    <!-- alel script ever her! -->
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styleLogin.css">
+    <script src="common.js"></script>
+    <script src="allViews.js"></script>
     
+    
+    <style>
+        
+
+    </style>
+
 </head>
 <body>
     <div id="app"></div>
 
-
     <script>
-        updateView();
+
+        updateView()
         function updateView() {
-        if(model.app.currentPage == "login")  html = updateViewLogInView();
-        if(model.app.currentPage == "register") html = updateViewRegisterView();
-        if(model.app.currentPage == "myProfileView") html = updateViewProfileView();
-        if(model.app.currentPage == "mapView") html = updateViewMapView();
-        
-        document.getElementById("app").innerHTML = html;
-    }
-     
-        
-    </script>
+            //logg inn og registrer // hoved meny
+            if(model.app.currentPage == 'login') html = createHtmlLogin();
+            if(model.app.currentPage == 'myProfileView') html = createHtmlMyProfile();
+            //Dette er din profil knapper
+            if(model.app.currentPage == 'register') html = createHtmlRegister();
+            if(model.app.currentPage == 'mapView') html = createHtmlMapView();
+            if(model.app.currentPage == 'matchBox') html = createHtmlMatchBox();
+            if(model.app.currentPage == 'bio') html = createHtmlBio();
+            if(model.app.currentPage == 'changeProfil') html = createHtmlEditProfil();
+            if(model.app.currentPage == 'newFrindes') html = createHtmlNewFrindes();
+             //fortsettelse på registrering
+            
 
-
-
-
+            document.getElementById("app").innerHTML = html;
+        }
+</script>
 </body>
 </html>
+
