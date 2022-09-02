@@ -3,12 +3,27 @@ function createHtmlLogin() {
 
   // Under gotoRegister(), her går vi først innom controller for å sette riktig side først,så videre til "view/page"
   html += /*html*/ `
-  <input type="text" oninput="model.inputs.login.userName=this.value" placeholder="Brukernavn">
-  <input type='text' oninput="model.inputs.login.passWord=this.value" placeholder="Passord"> </br>
+
+  <div class="grid-container">
+
+  <h1><span>K</span>l<span></span><span>ickit</span></h1>
+    
+
+
+
+
+
+
+  <input class="login_page_userName_input" type="text" oninput="model.inputs.login.userName=this.value" placeholder="Brukernavn">
+  <input class="login_page_passWord_input" type='password' oninput="model.inputs.login.passWord=this.value" placeholder="Passord"> </br>
   <p></p>
-  <button onclick="checkLogin()"id="logIn">Logg inn</button>
-  <button onclick="goToRegister()" id="Register">Registrer</button> 
+  <button class="login_page_button_logiIn" onclick="checkLogin()"id="logIn">Logg inn</button>
+  <button class="login_page_button_register" onclick="goToRegister()" id="Register">Registrer</button> 
+</div>
+
   `;
+
+  
 
 return html;
 
@@ -19,14 +34,16 @@ return html;
 function createHtmlMyProfile() {
 html = '';
 html = /*html*/ `
-  
-<button onclick="goToMap()">til kart</button>
-<button onclick="intrest()">Dine interesser</button>
-<button onclick="aboutMe()">Om meg</button>
-<button onclick="editProfil()">Endre profil</button>
-<button onclick="myFrindes()"> til dine nye venner</button>
 
+<div class="grid-container">
 
+<button class="globalBtn map" onclick="goToMap()">🗺️</button>
+<button class="globalBtn interests" onclick="interests()">🔔</button>
+<button class="globalBtn aboutMe" onclick="aboutMe()">🏠</button>
+<button class="globalBtn editProfile" onclick="editProfil()">⚙</button>
+<button class="globalBtn myFriends" onclick="myFrindes()"> 💌</button>
+
+</div>
 `
 return html
 }
@@ -103,19 +120,9 @@ function createHtmlBio(){
 
   return html;
 }
-// dette er og endre profil settings
-function createHtmlEditProfil(){
-  html = '';
-  html += /*html*/ `
-  
-  <h1>endre profil</h1>
-  
-  
-  `;
-  return html; 
-}
+
 // til dine nye venner box
-function createHtmlNewFrindes(){
+function createHtmlNewFriends(){
     html = '';
     html += /*html*/ `
     

@@ -20,7 +20,7 @@ model.users = [
       Q3: [''],
       Q4: [''],
    },
-   positionOnMap: { lat: 41.881832, lng: -87.623177}
+   positionOnMap: { lat: '', lng: ''},
 },
 
 

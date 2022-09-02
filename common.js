@@ -9,3 +9,4 @@ function indexUsers() {
     }
     // console.log(model.users);
 }
+

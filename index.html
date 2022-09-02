@@ -10,7 +10,9 @@
     <script src="superController.js"></script>
     <script src="common.js"></script>
     <script src="allViews.js"></script>
-    
+    <!--dette er cssstyling-->
+    <link rel="stylesheet" href="styles.css">
+
     
     <style>
         
@@ -32,9 +34,8 @@
             if(model.app.currentPage == 'register') html = createHtmlRegister();
             if(model.app.currentPage == 'mapView') html = createHtmlMapView();
             if(model.app.currentPage == 'matchBox') html = createHtmlMatchBox();
-            if(model.app.currentPage == 'bio') html = createHtmlBio();
-            if(model.app.currentPage == 'changeProfil') html = createHtmlEditProfil();
-            if(model.app.currentPage == 'newFrindes') html = createHtmlNewFrindes();
+        //    ' if(model.app.currentPage == 'bio') html = createHtmlBio();'
+            if(model.app.currentPage == 'newFriends') html = createHtmlNewFriends();
              //fortsettelse på registrering
             
 

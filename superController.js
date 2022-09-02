@@ -14,6 +14,7 @@ function checkLogin(){
                 console.log({user});
                 model.app.currentUser = model.users[i].personId
                 model.app.currentPage = 'myProfileView'; 
+                getLocationInterval()
                 updateView();
             }else {
                 console.log('No match');
@@ -22,6 +23,44 @@ function checkLogin(){
 
     }
 }
+
+
+function getLocationInterval() {
+    const intervalID = setInterval(getLocation, 60000);
+
+getLocation()
+ // Your code here
+ // Parameters are purely optional.
+}
+
+function getLocation() {
+    let currentLatitude = '';
+    let currentLongitude = '';
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+
+}
+
+function showPosition(position) {
+    currentLatitude = position.coords.latitude;
+    currentLongitude = position.coords.longitude;
+    // log current position
+    console.log(currentLatitude);
+    console.log(currentLongitude);    
+
+    // store location in model
+    model.users[0].positionOnMap.lat = currentLatitude;
+    model.users[0].positionOnMap.lng = currentLongitude;
+
+//   x.innerHTML = "Latitude: " + position.coords.latitude + 
+//   "<br>Longitude: " + position.coords.longitude;
+}
+
+
 
 // Thomas forslag: ---------------------------------------------------------------
 // ha en div ell noe som viser hvem som har logget inn etter passord match o.s.value
@@ -42,7 +81,7 @@ function goToRegister() {
     updateView()
 }
 // Dette er får dine nye venner boks
-function intrest(){
+function interests(){
     model.app.currentPage = 'matchBox'
     updateView();
 }
@@ -52,12 +91,8 @@ function aboutMe(){
     updateView();
 }
 
-function editProfil(){
-    model.app.currentPage = 'changeProfil'
-    updateView();
-}
 function myFrindes(){
-    model.app.currentPage = 'newFrindes'
+    model.app.currentPage = 'newFriends'
     updateView();
 
 }
