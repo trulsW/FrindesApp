@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="model.js"></script>
+    <script src="modelUser.js"></script>
+</head>
+<style>
+    /* container for sentrering av kartet */
+    /* slik det står nå ved å bruke 100% på classes og divs får man full skjerm og responsive.*/
+    .container {
+        /* height: 100vh; */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .map {
+        /* height: 80vh;
+        width: 80vw; */
+        height: 100%;
+        width: 100%;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+
+    <div class="container">
+       
+        <div class="map" id="map"></div> 
+
+        <!-- <div id="map2" style="height: 200px; width: 200px"></div> -->
+    </div>
+
+    <script>
+        // all informasjon om options,styling o.s.v: https://developers.google.com/maps/documentation/javascript/reference
+        
+    // maps.googleapis har en callback funksjon på slutten av stringen(initMap()), denne blir kjørt under etter innlastingen av kartet
+        // googleMaps()
+        // function googleMaps() {
+        function initMap() {
+            let html = '';
+            // position data kan sendes også via et objekt: { lat: 41.881832, lng: -87.623177}
+            let mapOptions = {
+                center: new google.maps.LatLng('41.881832', '-87.623177'), // ny google.maps API, LatLng= latitude and longtitude.
+                zoom: 18, // how zoomed in should map be after render.
+                mapTypeControl: false,
+                fullscreenControl: false,
+                streetViewControl: false,
+            }
+
+            // Name
+            // Latitude, Longtitude
+            // Image url
+            // scaledSize width, height
+            const markers = [
+                [
+                    "Alien hideout",
+                    41.881830, 
+                    -87.623600, 
+                    "img/alien.png", 
+                    38, 31,
+                    "This alien still working on a analprobe!"
+                  
+                ],
+                [
+                    "Alien home",
+                    41.880850, 
+                    -87.623200, 
+                    "img/alien.png", 
+                    38, 31,
+                    "Escaped from AREA-52"
+                ],
+                [
+                    "Alien home",
+                    41.881850, 
+                    -87.622500, 
+                    "img/alien.png", 
+                    38, 31,
+                    "The alien named: Truls!"
+                ]
+            ];
+
+
+              // her peker du til hvor kartet ska tegnes opp. kan legge inn flere under hver sin div, teste ut styling o.s.v
+            let map = new google.maps.Map(document.getElementById("map"),mapOptions);
+            map.setMapTypeId("satellite")
+            map.setTilt(45);
+            // let map2 = new google.maps.Map(document.getElementById("map2"),mapOptions);
+            html = document.getElementById("map");
+            console.log(html);
+
+
+            for(let i = 0; i < markers.length; i++) {
+                const currMarker = markers[i];
+            
+                const marker = new google.maps.Marker({
+                position: {lat: currMarker[1], lng: currMarker[2] },
+                map,
+                title: currMarker[0],
+                icon: {
+                    url: currMarker[3],
+                    scaledSize: new google.maps.Size(38, 31),
+                },
+                animation: google.maps.Animation.Drop
+                });
+
+                const infowindow = new google.maps.InfoWindow({
+                content: currMarker[6]
+                });
+
+                marker.addListener("click", () => {
+                infowindow.open(map, marker);
+                });
+            }
+            
+            
+          
+          
+
+        }
+    // }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNiHp53DP3ywjTf7j4z0eNgvd1jwDCtQQ&callback=initMap"></script>
+</body>
+</html>
