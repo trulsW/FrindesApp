@@ -10,21 +10,24 @@
     <script src="superController.js"></script>
     <script src="common.js"></script>
     <script src="allViews.js"></script>
+    <script src="map.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj5sAHF7x0IDRZ2AAVUHGoUEv1lboIXAc&callback=initMap"></script>
     <!--dette er cssstyling-->
     <link rel="stylesheet" href="styles.css">
 
-    
     <style>
         
-
+        
     </style>
 
-</head>
+</head> 
 <body>
+    <div style="height: 100vh; width:1000px; background-color: red;" id="map"></div>
     <div id="app"></div>
-
+    
     <script>
-
+        // AIzaSyDNiHp53DP3ywjTf7j4z0eNgvd1jwDCtQQ
+        // AIzaSyDj5sAHF7x0IDRZ2AAVUHGoUEv1lboIXAc
         updateView()
         function updateView() {
             //logg inn og registrer // hoved meny
@@ -37,6 +40,7 @@
         //    ' if(model.app.currentPage == 'bio') html = createHtmlBio();'
             if(model.app.currentPage == 'newFriends') html = createHtmlNewFriends();
              //fortsettelse på registrering
+             
             
 
             document.getElementById("app").innerHTML = html;
