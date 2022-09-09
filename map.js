@@ -3,7 +3,7 @@
  function initMap() {
     let mapOptions = {
         center: new google.maps.LatLng('41.881832', '-87.623177'), // ny google.maps API, LatLng= latitude and longtitude.
-        zoom: 18, // how zoomed in should map be after render.
+        zoom: 16, // how zoomed in should map be after render.
          mapTypeControl: false,
          fullscreenControl: false,
          streetViewControl: false,

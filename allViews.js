@@ -6,7 +6,7 @@ function createHtmlLogin() {
 
   <div class="grid-container">
 
-  <h1><span>K</span>l<span></span><span>ickit</span></h1>
+  <h1 class="login_page_klickit_logo"><span>K</span>l<span></span><span>i</span><span>c</span><span>k</span><span>i</span><span>t</span></h1>
     
 
 
@@ -83,10 +83,13 @@ function createHtmlRegister() {
 //Dette er til kartet
 
 function createHtmlMapView(){
+  document.getElementById("map").classList.toggle("map"); // skrur på og av css stilen på map diven
+ 
+  
+  initMap();
   html = '';
   html += /*html*/ `
   
-  <button>hehehe</button>
   
   
   
