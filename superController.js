@@ -12,7 +12,9 @@ function checkLogin(){
             if(model.inputs.login.userName === model.users[i].userName && model.inputs.login.passWord === model.users[i].passWord) {
                 console.log('-------- Username & Password check --------');
                 console.log({user});
+                indexUsers() // calling function to index users
                 model.app.currentUser = model.users[i].personId
+                model.app.loggedIn = true;
                 model.app.currentPage = 'myProfileView'; 
                 getLocationInterval()
                 updateView();
@@ -26,7 +28,7 @@ function checkLogin(){
 
 
 function getLocationInterval() {
-    const intervalID = setInterval(getLocation, 60000);
+    const intervalID = setInterval(getLocation, 280000);
 
 getLocation()
  // Your code here
@@ -81,18 +83,24 @@ function goToRegister() {
     updateView()
 }
 // Dette er får dine nye venner boks
-function interests(){
+function goToInterests(){
     model.app.currentPage = 'matchBox'
     updateView();
 }
 
-function aboutMe(){
-    model.app.currentPage = 'bio'
+function goToHome(){
+    model.app.currentPage = 'myProfileView'
     updateView();
 }
 
-function myFrindes(){
+function goToMyFriends(){
     model.app.currentPage = 'newFriends'
     updateView();
 
+}
+
+function goToEditProfile() {
+    
+    model.app.currentPage = 'editProfile'
+    updateView();
 }

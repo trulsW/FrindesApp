@@ -10,3 +10,25 @@ function indexUsers() {
     // console.log(model.users);
 }
 
+
+//Dette er knapper som er like på alle sider.
+
+function createSameButtons(){
+let html = '';
+html += /*html*/ `
+<div class="buttonList">
+
+<div class="userLoggedInAs"></div> 
+
+<button class="globalBtn map" onclick="goToMap()">🗺️</button>
+<button class="globalBtn interests" onclick="goToInterests()">🔔</button>
+<button class="globalBtn aboutMe" onclick="goToHome()">🏠</button>
+<button class="globalBtn editProfile" onclick="goToEditProfile()">⚙</button>
+<button class="globalBtn myFriends" onclick="goToMyFriends()"> 💌</button>
+
+</div>
+
+
+`;
+return html;
+}

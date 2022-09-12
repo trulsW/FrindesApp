@@ -28,7 +28,7 @@ body{
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
     }
-    
+
     @keyframes gradient {
         0% {
             background-position: 0% 50%;
@@ -49,6 +49,34 @@ body{
     grid-row-end
     grid-column-end
     */
+    
+    .friendsTableLeft {
+        grid-area: 2 / 1 / span 4 / span 4;
+        
+    }
+    
+    h2.friend{
+        grid-area: 1 / 2 / span 4 / span 4;
+    }
+
+    
+    .interestsTableRight {
+        grid-area: 2 / 5 / span 4 / span 4;
+    }
+    
+    h2.int{
+        grid-area: 1 / 6 / span 4 / span 4;
+    }
+
+    .welcomeMessage {
+        grid-area: 3 / 3 / span 1 / span 4;
+        
+    }
+    
+    .userLoggedInAs {
+        grid-area: 1 / 1 / span 1 / span 2;
+        
+    }
     
     .login_page_userName_input {
         /* login_page - username_input*/
@@ -126,32 +154,33 @@ body{
     
     }
     
-    
     .login_page_klickit_logo {
         grid-area: 3 / 4 / span 1 / span 2;
         background-color: #191919;
         color: white;
         height: 50%;
-        width: 85%;
+        width: 160%;
         /* border: 2px solid #3498db; */
+        /* border-radius: 15%; */
         /* border-start-end-radius: 0px; */
         /* border-start-start-radius: 0px; */
         /* border-end-end-radius: 30px; */
-        border-end-start-radius: 0px;
+        /* border-end-start-radius: 0px; */
         text-align: center;
-        font-size: 80%;
+        font-size: 30px;
         align-self: end;
         justify-self: center;
     }
+   
     
     
     h1 {
         grid-area: 3 / 3 / span 2 / span 6;
         color: hsl(0, 0%, 30%);
-        font-size: 40px;
+        font-size: 90%;
         font-weight: bold;
         font-family: monospace;
-        letter-spacing: 7px;
+        letter-spacing: 6px;
         cursor: pointer;
         text-transform: uppercase;
         background: linear-gradient(
@@ -180,20 +209,26 @@ body{
         }
     }
     
-    
+    .buttons {
+        grid-area: 10 / 2 / span 1 / span 8;
+    }
+
     .globalBtn{
-        background-color: #191919;
+        background-color: black;
+        background: none;
         color: white;
         height: 40px;
         width: 40px;
-        border: 2px solid #3498db;
+        border: 2px solid rgb(92, 127, 151);
+        opacity: 75%;
         border-radius: 100%;
         text-align: center;
         font-size: 100%;
         align-self: center;
+        margin: 9px;
         /* justify-self: start; */
     }
-    .globalBtn:hover{
+    .globalBtn::selection{
         color: #3498db;
         background-color: #222222;
     }
@@ -217,5 +252,8 @@ body{
         grid-area: 10 / 1 / 1 / 1;
     }
     
+     table, th, td {
+    border:1px solid black
     
-    
+}
+

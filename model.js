@@ -12,8 +12,9 @@
 const model = {
     // app: appens tillstand: sidebyte, 
         app: {
-            currentPage: 'login', // map, requests, profile, register
+            currentPage: 'login', // login, mapView, myProfileView, register, newFriends
             currentUser: 1,
+            loggedIn: '', // true / false
             // listOfPages: ["login", "mainPage", "registerPage"]
         },
     
@@ -62,6 +63,8 @@ const model = {
     
     
        title: 'getFriends',
+       welcomeMessage: 'Velkommen til Klickit',
+
         
         questions: {
             Q1: 'Hva liker du å gjøre sosialt / med venner?',

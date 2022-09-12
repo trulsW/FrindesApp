@@ -1,4 +1,6 @@
 function createHtmlLogin() {
+  console.clear();
+  console.log('Currently at createHtmlLogin');
   html = '';
 
   // Under gotoRegister(), her går vi først innom controller for å sette riktig side først,så videre til "view/page"
@@ -6,7 +8,7 @@ function createHtmlLogin() {
 
   <div class="grid-container">
 
-  <h1 class="login_page_klickit_logo"><span>K</span>l<span></span><span>i</span><span>c</span><span>k</span><span>i</span><span>t</span></h1>
+  <h1 class="login_page_klickit_logo">Klickit</h1>
     
 
 
@@ -30,29 +32,36 @@ return html;
 }
 
 // dette er din hjemme profil
-
+//Dette er bilde av et hus
 function createHtmlMyProfile() {
+  console.clear();
+  console.log('Currently at createHtmlProfile');
 html = '';
 html = /*html*/ `
-
 <div class="grid-container">
+<div>vi er nå på myProfileView</div>
+<div class="userLoggedInAs"></div> 
 
-<button class="globalBtn map" onclick="goToMap()">🗺️</button>
-<button class="globalBtn interests" onclick="interests()">🔔</button>
-<button class="globalBtn aboutMe" onclick="aboutMe()">🏠</button>
-<button class="globalBtn editProfile" onclick="editProfil()">⚙</button>
-<button class="globalBtn myFriends" onclick="myFrindes()"> 💌</button>
+<div class = 'buttons'>${createSameButtons()}</div> 
+
+
+
+
 
 </div>
 `
+
 return html
+
 }
 
 // registrere bruker første spørsmål
 
 function createHtmlRegister() {
+  console.clear();
+  console.log('Currently at createHtmlRegister');
   html = '';
-  
+ 
   html += /*html*/ `
   <button onclick="firstQ1()">Du er?</button>
   <button>en kvinne</button>
@@ -83,6 +92,8 @@ function createHtmlRegister() {
 //Dette er til kartet
 
 function createHtmlMapView(){
+  console.clear();
+  console.log('Currently at createHtmlMapView');
   document.getElementById("map").classList.toggle("map"); // skrur på og av css stilen på map diven
  
   
@@ -92,7 +103,7 @@ function createHtmlMapView(){
   
   
   
-  
+  <div class = 'buttons'>${createSameButtons()}</div> 
   `;
 return html;
 
@@ -100,19 +111,24 @@ return html;
 // Her kan du se om hvem som er dine interesser
 function createHtmlMatchBox(){
   html = '';
-  html += /*html*/ `
   
+  html += /*html*/ `
+  <div class="grid-container">
   <h1>hihi</h1>
   
   
   
-  
+
+  <div class = 'buttons'>${createSameButtons()}</div> 
+  </div> 
   `;
   return html;
 }
 
 // Dette er her du kan skrive lit om deg selv
 function createHtmlBio(){
+  console.clear();
+  console.log('Currently at createHtmlBio');
       html = '';
       html += /*html*/ `
 
@@ -126,15 +142,73 @@ function createHtmlBio(){
 
 // til dine nye venner box
 function createHtmlNewFriends(){
+  console.clear();
+  console.log('Currently at createHtmlNewFriends');
     html = '';
     html += /*html*/ `
     
-    <h1>dine nye venner </h1>
     
-    
-    
+    <div class="grid-container">
+<table class="friendsTableLeft" style="width:100%">
+<h2 class='friend'> Mine venner </h2> 
+<tr>
+    <th> navn </th>
+    <th> Alder </th>
+    <th> Land </th>
+</tr>
+<tr>
+    <td> Ditt Navn </td>
+    <td> Din alder </td>
+    <td> Ditt land </td>
+</tr>
+<tr>
+    <td> Ditt Navn </td>
+    <td> Din alder </td>
+    <td> Ditt land </td>
+</tr>
+</table>
+
+
+
+
+<table class="interestsTableRight" style="width:100%">
+
+    <h2 class="int"> Intriserte </h2>
+
+<tr>
+<th> Navn </th>
+</tr>
+<tr>
+<td> Ditt Navn </td>
+</tr>
+<tr>
+<td> Ditt Navn </td>
+</tr>
+
+
+
+</table>
+
+<div class = 'buttons'>${createSameButtons()}</div> 
+</div>
+
+
+
     `;
 
 
   return html;
+}
+
+function createHtmlEditProfile(){
+html = '';
+html += /*html*/ `
+<div class="grid-container">
+<h1>Fiks på meg</h1>
+
+
+<div class = 'buttons'>${createSameButtons()}</div> 
+</div> 
+`;
+return html;
 }
