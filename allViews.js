@@ -38,17 +38,22 @@ function createHtmlMyProfile() {
   console.log('Currently at createHtmlProfile');
 html = '';
 html = /*html*/ `
+
 <div class="grid-container">
 <div>vi er nå på myProfileView</div>
 <div class="userLoggedInAs"></div> 
 
+
+
+
+
+
+
+
+
 <div class = 'buttons'>${createSameButtons()}</div> 
-
-
-
-
-
 </div>
+
 `
 
 return html
@@ -63,23 +68,60 @@ function createHtmlRegister() {
   html = '';
  
   html += /*html*/ `
-  <button onclick="firstQ1()">Du er?</button>
-  <button>en kvinne</button>
-  <button>En mann</button>
-  <h2>Du ønsker og krysse veien med...</h2>
+  <div class="grid-container">
   
-   <div>Menn</div> 
-  <div>Kvinner</div>
+  <div class="registerMF">
+  <h3 onclick="firstQ1()">Du er?</h3>
+  
+  <label class="checkContainRadio">En Mann
+  <input type="radio" name="radioMann">
+  <span class="checkmarkRadio"></span>
+  </label>
+  <label class="checkContainRadio">En Kvinne
+  <input type="radio" name="radioKvinne">
+  <span class="checkmarkRadio"></span>
+  </label>
+  </div>
 
-  <button onclick="cangeSite()">fortesett</button>
+  <div class="MFcross">
+  <h3>Du ønsker og krysse veien med:</h3>
+  
+  <label class="checkContain">Menn
+  <input type="checkbox">
+  <span class="checkmark"></span>
+  </label>
+  <label class="checkContain">Kvinner
+  <input type="checkbox">
+  <span class="checkmark"></span>
+  </label>
+  </div>
+
+  <button class="continue" onclick="cangeSiteRegister()">fortsett</button>
+
+  </div>
   
   `
   return html; // så returnerver vi innholdet av html variabel tilbake i en drittfart.
 }
 
+// Registrer bruker andre spørsmål...
+
+
+function createNewRegisterSite1(){
+  html = '';
+  html += /*html*/ `
+  <div class="grid-container">
+  <button onclick="changeSiteRegister1()"> Fortsett til Klickit </button>
 
 
 
+
+  
+  </div>
+  `;
+return html;
+
+}
 
 
 
@@ -103,7 +145,7 @@ function createHtmlMapView(){
   
   
   
-  <div class = 'buttons'>${createSameButtons()}</div> 
+   <div class = 'buttonsMap'>${createSameButtons()}</div> 
   `;
 return html;
 

@@ -42,8 +42,8 @@
             if(model.app.currentPage == 'editProfile') html = createHtmlEditProfile();
             if(model.app.currentPage == 'newFriends') html = createHtmlNewFriends();
              //fortsettelse på registrering
-             
-            
+             if(model.app.currentPage == 'newSiteRegister') html = createNewRegisterSite();
+             if(model.app.currentPage == 'newSiteRegister1') html = createNewRegisterSite1();
 
             document.getElementById("app").innerHTML = html;
         }

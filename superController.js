@@ -16,7 +16,7 @@ function checkLogin(){
                 model.app.currentUser = model.users[i].personId
                 model.app.loggedIn = true;
                 model.app.currentPage = 'myProfileView'; 
-                getLocationInterval()
+                getLocation()
                 updateView();
             }else {
                 console.log('No match');
@@ -26,7 +26,7 @@ function checkLogin(){
     }
 }
 
-
+/////////// Deaktivert interavll gps inntil videre ////////////
 function getLocationInterval() {
     const intervalID = setInterval(getLocation, 280000);
 
@@ -34,6 +34,9 @@ getLocation()
  // Your code here
  // Parameters are purely optional.
 }
+///////////////////////////////////////////////////////////////
+
+
 
 function getLocation() {
     let currentLatitude = '';
@@ -45,6 +48,7 @@ function getLocation() {
         x.innerHTML = "Geolocation is not supported by this browser.";
       }
 
+      
 }
 
 function showPosition(position) {
@@ -68,6 +72,22 @@ function showPosition(position) {
 // ha en div ell noe som viser hvem som har logget inn etter passord match o.s.value
 // må ta i bruk setInterval() for at de skal rekke å se det, 3 sekunder, som de meldingen str fremme ..
 //-----------------------------------------------------------------------------------
+
+//Dette er for Registrerings sider.....
+
+function cangeSiteRegister(){
+    model.app.currentPage = 'newSiteRegister';
+    updateView();
+}
+
+//Neste side for registrering 
+
+function cangeSiteRegister(){
+    model.app.currentPage = 'newSiteRegister1';
+    updateView();
+}
+
+
 
 // Dette er for mapViewController
 

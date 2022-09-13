@@ -64,14 +64,15 @@ const model = {
     
        title: 'getFriends',
        welcomeMessage: 'Velkommen til Klickit',
-
         
-        questions: {
-            Q1: 'Hva liker du å gjøre sosialt / med venner?',
-            Q2: 'Har du noen hobbyer?',
-            Q3: 'Hvordan er du med mat?',
-            Q4: 'Hvordan er du med røyk og drikke?'
-        },
+       questions: [
+        
+            {Q1: 'Hva liker du å gjøre sosialt / med venner?'},
+            {Q2: 'Har du noen hobbyer?'},
+            {Q3: 'Hvordan er du med mat?'},
+            {Q4: 'Hvordan er du med røyk og drikke?'},
+        
+        ],
     
         possibleAnswers: {
             Q1: [

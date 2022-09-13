@@ -2,7 +2,11 @@
  let map;
  function initMap() {
     let mapOptions = {
-        center: new google.maps.LatLng('41.881832', '-87.623177'), // ny google.maps API, LatLng= latitude and longtitude.
+        
+        
+
+        
+        center: new google.maps.LatLng(`${model.users[0].positionOnMap.lat}`, `${model.users[0].positionOnMap.lng}`), // ny google.maps API, LatLng= latitude and longtitude.
         zoom: 16, // how zoomed in should map be after render.
          mapTypeControl: false,
          fullscreenControl: false,
