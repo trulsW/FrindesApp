@@ -44,7 +44,7 @@ model.users = [
         Q3: ['Picky eater', 'Frossenpizza', 'grillkrydder'],
         Q4: ['Røyker ikke', 'Røyker sosialt', 'Drikker sosialt'],
      },
-     positionOnMap: { lat: 41.881832, lng: -87.623177}
+     positionOnMap: { lat: 59.2674370, lng: 9.9166592}
     },
     
     {
@@ -65,7 +65,7 @@ model.users = [
         Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
         Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
      },
-     positionOnMap: { lat: 41.901832, lng: -87.632977}
+     positionOnMap: { lat: 59.1296864, lng: 10.1646336}
     },
 
    {
@@ -86,7 +86,7 @@ model.users = [
       Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
       Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
      },
-     positionOnMap: { lat: 41.901832, lng: -87.632977}
+     positionOnMap: { lat: 59.1396864, lng: 10.1646336}
    },
 
       {
@@ -107,7 +107,59 @@ model.users = [
             Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
-         positionOnMap: { lat: 41.901832, lng: -87.632977}
+         positionOnMap: { lat: 41.901832, lng: -87.632968}
       },
-      ];
+/////////////////////////////////////////////////////////////////////////////////////////////////////      
+//////////// --------------- laget 2 bruker som thomas bruker til testing. pga gps greine. /////////
+      {
+         //dummy
+         personId: '',   
+         firstName: 'thomasTest1',
+         lastName: 'thomasLastNameTest',  
+         userName: 't1',
+         passWord: 't1',   
+         gender: 'male', 
+         age: 43,
+         photos: [],
+         mail: 'thomas79mail@demomail.com', 
+         activeSince: '',
+         answers: {
+            Q1: ['trene', 'fjellturer', 'være med familie'],
+            Q2: ['Gaming', 'Sykling'],
+            Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
+            Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
+         },
+         positionOnMap: { lat: 59.267472, lng: 9.9166595}
+      },
+      {
+         //dummy
+         personId: '',   
+         firstName: 'thomasTest2',
+         lastName: 'thomasLastNameTest',  
+         userName: 't2',
+         passWord: 't2',   
+         gender: 'male', 
+         age: 43,
+         photos: [],
+         mail: 'thomas79mail@demomail.com', 
+         activeSince: '',
+         answers: {
+            Q1: ['trene', 'fjellturer', 'være med familie'],
+            Q2: ['Gaming', 'Sykling'],
+            Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
+            Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
+         },
+         positionOnMap: { lat: 59.2674354, lng: 9.9166580}
+      },
+      
+      
+/////////////////////////////////////////////////////////////////////////////////////////////////////      
+/////////////////////////////////////////////////////////////////////////////////////////////////////      
+
+
+
+
+
+
+];
 

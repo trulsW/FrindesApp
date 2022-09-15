@@ -74,11 +74,11 @@ function createHtmlRegister() {
   <h3 onclick="firstQ1()">Du er?</h3>
   
   <label class="checkContainRadio">En Mann
-  <input type="radio" name="radioMann">
+  <input type="radio" name="radioMF">
   <span class="checkmarkRadio"></span>
-  </label>
+  </label><br>
   <label class="checkContainRadio">En Kvinne
-  <input type="radio" name="radioKvinne">
+  <input type="radio" name="radioMF">
   <span class="checkmarkRadio"></span>
   </label>
   </div>
@@ -113,7 +113,13 @@ function createNewRegisterSite1(){
   <div class="grid-container">
   <button onclick="changeSiteRegister1()"> Fortsett til Klickit </button>
 
+<form>
+        <input type="checkbox" id="question1" name="${model.questions[0].Q1}" value="Q1">
+        <label for="question1">halla </label> <br>
 
+
+
+</form>
 
 
   

@@ -34,13 +34,12 @@ getLocation()
  // Your code here
  // Parameters are purely optional.
 }
-///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
 
-
+//////////// Below: onlyf for gps localization /////////////////////////////
 function getLocation() {
-    let currentLatitude = '';
-    let currentLongitude = '';
+   
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -50,22 +49,38 @@ function getLocation() {
 
       
 }
+// const yourpositionLat = 'getLocation()';
+// const yourpositionIng = 'getLocation()';
 
 function showPosition(position) {
     currentLatitude = position.coords.latitude;
     currentLongitude = position.coords.longitude;
     // log current position
-    console.log(currentLatitude);
-    console.log(currentLongitude);    
+    console.log({currentLatitude});
+    console.log({currentLongitude});   
+    
 
-    // store location in model
-    model.users[0].positionOnMap.lat = currentLatitude;
-    model.users[0].positionOnMap.lng = currentLongitude;
+    model.app.currentPosition.lat = currentLatitude;
+    model.app.currentPosition.lng =  currentLongitude;
+
+    
+    
 
 //   x.innerHTML = "Latitude: " + position.coords.latitude + 
 //   "<br>Longitude: " + position.coords.longitude;
 }
 
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
 
 
 // Thomas forslag: ---------------------------------------------------------------
@@ -124,3 +139,11 @@ function goToEditProfile() {
     model.app.currentPage = 'editProfile'
     updateView();
 }
+
+
+    //hvor en du er på kartet. Så for du alle sammen opp som er innafor din km rekke vidde..
+  
+    //Du kan få en push melding hvis du er nerme nok en annen bruker. feks.. Hei har du sette denne brukeren sin profil.
+
+
+

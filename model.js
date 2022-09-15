@@ -14,6 +14,9 @@ const model = {
         app: {
             currentPage: 'login', // login, mapView, myProfileView, register, newFriends
             currentUser: 1,
+            currentPosition: {lat: 0, lng: 0 }, 
+            
+
             loggedIn: '', // true / false
             // listOfPages: ["login", "mainPage", "registerPage"]
         },

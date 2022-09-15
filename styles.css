@@ -24,9 +24,10 @@ body{
         grid-template-rows: repeat(10, 1fr);
         /* background-color: linear-gradient(#e66465, #9198e5);;  */
         /* background-image: linear-gradient(45deg, rgb(85, 228, 19), yellow); */
-        background: linear-gradient(-45deg, #ffffff, #a1a0a1, #292929, #121313);
+        background: linear-gradient(-45deg, #cacaca, #969696, #383838, #121313);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
     @keyframes gradient {
@@ -274,12 +275,15 @@ body{
 }
 
 .registerMF{
-    grid-area: 2 / 2 / span 3 / span 3;
+    grid-area: 2 / 2 / span 3 / span 7;
+    color: rgb(104, 164, 243);
+    font-size: large;
+    
 }
 
 .MFcross{
     grid-area: 4 / 2 / span 2 / span 7;
-    color: rgb(172, 168, 168);
+    color: rgb(104, 164, 243);
     background: none;
     font-size: large;
 }
@@ -321,7 +325,7 @@ body{
   }
 
   .checkContain input:checked ~ .checkmark {
-    background-color: #5eaef0;
+    background-color: #3498db;
   }
   
   .checkmark:after {
