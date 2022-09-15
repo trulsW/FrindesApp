@@ -4,6 +4,8 @@ model.users = [
    //activeUser 
    //  chat:[{userid1:1, userid2:2, chatText:[{id:1,text:"hei"},{id:2,text:"hei"},]}],   eventuelt trekk denne ut i eget dokument
    // chat:["hei","hallo"],
+
+   //kan ikke se team1
    personId: 0,   
    firstName: 'Team1',
    lastName: 'bestTeam',  
@@ -20,7 +22,12 @@ model.users = [
       Q3: [''],
       Q4: [''],
    },
-   positionOnMap: { lat: '', lng: ''},
+   positionOnMap: [
+      { lat: 59.1296864, lng: 10.2946336},
+      { lat: 59.3674370, Ing: 9.5166592},
+
+
+   ],
 },
 
 
@@ -29,7 +36,7 @@ model.users = [
       //dummy
       // chat:[{id:1,text:"hei"},{id:2,text:"hei"}],
      personId: '',   
-     firstName: 'firstName_d1',
+     firstName: 'truls',
      lastName: 'lastName_d1',  
      userName: '11',
      passWord: '11',   
@@ -44,7 +51,10 @@ model.users = [
         Q3: ['Picky eater', 'Frossenpizza', 'grillkrydder'],
         Q4: ['Røyker ikke', 'Røyker sosialt', 'Drikker sosialt'],
      },
-     positionOnMap: { lat: 59.2674370, lng: 9.9166592}
+     positionOnMap: [
+      { lat: 59.2674370, lng: 9.9166592},
+      { lat: 59.3674370, Ing: 9.9666592},
+     ],
     },
     
     {
@@ -65,7 +75,10 @@ model.users = [
         Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
         Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
      },
-     positionOnMap: { lat: 59.1296864, lng: 10.1646336}
+     positionOnMap: [
+      { lat: 59.1296864, lng: 10.1646336},
+      { lat: 59.2296864, lng: 10.1746336},
+     ],
     },
 
    {
@@ -86,7 +99,11 @@ model.users = [
       Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
       Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
      },
-     positionOnMap: { lat: 59.1396864, lng: 10.1646336}
+     positionOnMap: [
+      { lat: 59.1456864, lng: 10.1646336},
+      { lat: 59.1496864, lng: 10.1846336},
+
+     ],
    },
 
       {
@@ -107,7 +124,12 @@ model.users = [
             Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
-         positionOnMap: { lat: 41.901832, lng: -87.632968}
+         positionOnMap: [
+         { lat: 59.1296864, lng: 10.1646336},
+         { lat: 59.2096864, lng: 10.2046336},
+
+         ],
+
       },
 /////////////////////////////////////////////////////////////////////////////////////////////////////      
 //////////// --------------- laget 2 bruker som thomas bruker til testing. pga gps greine. /////////
@@ -129,7 +151,10 @@ model.users = [
             Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
-         positionOnMap: { lat: 59.267472, lng: 9.9166595}
+         positionOnMap: [
+            { lat: 59.2196864, lng: 10.2146336},
+            { lat: 59.3096864, lng: 10.406336},
+         ],
       },
       {
          //dummy
@@ -149,7 +174,10 @@ model.users = [
             Q3: ['Spiser det meste', 'Organisk', 'Ferskt er best'],
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
-         positionOnMap: { lat: 59.2674354, lng: 9.9166580}
+         positionOnMap: [
+            { lat: 59.5096864, lng: 10.2246336},
+            { lat: 58.1396864, lng: 11.1646336},
+         ],
       },
       
       

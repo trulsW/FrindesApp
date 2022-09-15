@@ -149,7 +149,7 @@ function createHtmlMapView(){
   html = '';
   html += /*html*/ `
   
-  
+  <button onclick="goToRandomize()">RandomMice 🐁</button>
   
    <div class = 'buttonsMap'>${createSameButtons()}</div> 
   `;

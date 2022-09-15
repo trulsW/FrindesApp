@@ -14,7 +14,7 @@ function checkLogin(){
                 console.log({user});
                 indexUsers() // calling function to index users
                 model.app.currentUser = model.users[i].personId
-                model.app.loggedIn = true;
+                // model.app.loggedIn = true;
                 model.app.currentPage = 'myProfileView'; 
                 getLocation()
                 updateView();
@@ -38,8 +38,10 @@ getLocation()
 
 
 //////////// Below: onlyf for gps localization /////////////////////////////
+let currentLatitude = '';
+let currentLongitude = '';
+
 function getLocation() {
-   
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -140,10 +142,35 @@ function goToEditProfile() {
     updateView();
 }
 
+//Randomize aliens på kartet....
 
-    //hvor en du er på kartet. Så for du alle sammen opp som er innafor din km rekke vidde..
-  
-    //Du kan få en push melding hvis du er nerme nok en annen bruker. feks.. Hei har du sette denne brukeren sin profil.
+    function goToRandomize() {
+        setTimeout(() => {
+            runRandomize()            
+        }, 1000);
+    }         
+    let random2 = null;
+    let count = 0;
+
+    function runRandomize() {
+        // console.log('Kun en test'); // denne funker!!
+        for(let i =0 ; i < 1000; i++){
+            
+           let random1 = Math.floor(Math.random() * 2)
+           random2 = Math.floor(Math.random() * 2)
+
+           let tmp = random1
+
+           random1 = random2
+           random2 = tmp
+        }
+        
+        console.log({random2});
+
+        
+        
+
+    }
 
 
-
+    
