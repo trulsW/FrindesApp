@@ -5,7 +5,6 @@ model.users = [
    //  chat:[{userid1:1, userid2:2, chatText:[{id:1,text:"hei"},{id:2,text:"hei"},]}],   eventuelt trekk denne ut i eget dokument
    // chat:["hei","hallo"],
 
-   //kan ikke se team1
    personId: 0,   
    firstName: 'Team1',
    lastName: 'bestTeam',  
@@ -21,10 +20,12 @@ model.users = [
       Q2: [''],
       Q3: [''],
       Q4: [''],
+
+     
    },
    positionOnMap: [
-      { lat: 59.1296864, lng: 10.2946336},
-      { lat: 59.3674370, Ing: 9.5166592},
+      { lat: 59.1756864, lng: 10.164633},
+      { lat: 59.3674370, lng: 9.5166592},
 
 
    ],
@@ -52,8 +53,9 @@ model.users = [
         Q4: ['Røyker ikke', 'Røyker sosialt', 'Drikker sosialt'],
      },
      positionOnMap: [
-      { lat: 59.2674370, lng: 9.9166592},
-      { lat: 59.3674370, Ing: 9.9666592},
+      { lat: 59.1196864, lng: 10.1346336},
+      { lat: 59.2296840, lng: 10.1746355},
+      
      ],
     },
     
@@ -132,7 +134,7 @@ model.users = [
 
       },
 /////////////////////////////////////////////////////////////////////////////////////////////////////      
-//////////// --------------- laget 2 bruker som thomas bruker til testing. pga gps greine. /////////
+//////////// --------------- laget 2 brukere som thomas bruker til testing. pga gps greine. /////////
       {
          //dummy
          personId: '',   
@@ -152,9 +154,11 @@ model.users = [
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
          positionOnMap: [
-            { lat: 59.2196864, lng: 10.2146336},
-            { lat: 59.3096864, lng: 10.406336},
-         ],
+            { lat: 59.1396864, lng: 10.2246336},
+            { lat: 59.2674390, lng: 9.9166560},
+         ], // thomas kordinater:
+         //{currentLatitude: 59.2674364}
+         //{currentLongitude: 9.9166587}
       },
       {
          //dummy
@@ -175,8 +179,8 @@ model.users = [
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
          positionOnMap: [
-            { lat: 59.5096864, lng: 10.2246336},
-            { lat: 58.1396864, lng: 11.1646336},
+            { lat: 59.1396864, lng: 10.1946336},
+            { lat: 59.2674320, lng: 9.9176599},
          ],
       },
       

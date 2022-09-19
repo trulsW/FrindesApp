@@ -20,6 +20,7 @@ html += /*html*/ `
 
 <div class="userLoggedInAs"></div> 
 
+
 <button class="globalBtn map" onclick="goToMap()">🗺️</button>
 <button class="globalBtn interests" onclick="goToInterests()">🔔</button>
 <button class="globalBtn aboutMe" onclick="goToHome()">🏠</button>

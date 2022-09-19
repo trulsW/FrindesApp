@@ -1,5 +1,4 @@
 function createHtmlLogin() {
-  console.clear();
   console.log('Currently at createHtmlLogin');
   html = '';
 
@@ -34,7 +33,6 @@ return html;
 // dette er din hjemme profil
 //Dette er bilde av et hus
 function createHtmlMyProfile() {
-  console.clear();
   console.log('Currently at createHtmlProfile');
 html = '';
 html = /*html*/ `
@@ -63,7 +61,6 @@ return html
 // registrere bruker første spørsmål
 
 function createHtmlRegister() {
-  console.clear();
   console.log('Currently at createHtmlRegister');
   html = '';
  
@@ -140,17 +137,16 @@ return html;
 //Dette er til kartet
 
 function createHtmlMapView(){
-  console.clear();
   console.log('Currently at createHtmlMapView');
+  
   document.getElementById("map").classList.toggle("map"); // skrur på og av css stilen på map diven
- 
+  
   
   initMap();
   html = '';
   html += /*html*/ `
   
-  <button onclick="goToRandomize()">RandomMice 🐁</button>
-  
+
    <div class = 'buttonsMap'>${createSameButtons()}</div> 
   `;
 return html;
@@ -175,7 +171,6 @@ function createHtmlMatchBox(){
 
 // Dette er her du kan skrive lit om deg selv
 function createHtmlBio(){
-  console.clear();
   console.log('Currently at createHtmlBio');
       html = '';
       html += /*html*/ `
@@ -190,7 +185,6 @@ function createHtmlBio(){
 
 // til dine nye venner box
 function createHtmlNewFriends(){
-  console.clear();
   console.log('Currently at createHtmlNewFriends');
     html = '';
     html += /*html*/ `
@@ -221,7 +215,7 @@ function createHtmlNewFriends(){
 
 <table class="interestsTableRight" style="width:100%">
 
-    <h2 class="int"> Intriserte </h2>
+    <h2 class="int"> interesserte </h2>
 
 <tr>
 <th> Navn </th>

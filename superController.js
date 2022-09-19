@@ -17,6 +17,10 @@ function checkLogin(){
                 // model.app.loggedIn = true;
                 model.app.currentPage = 'myProfileView'; 
                 getLocation()
+                setTimeout(() => {
+                    compareDistance()
+                }, 2000);  
+                start()
                 updateView();
             }else {
                 console.log('No match');
@@ -57,7 +61,9 @@ function getLocation() {
 function showPosition(position) {
     currentLatitude = position.coords.latitude;
     currentLongitude = position.coords.longitude;
+    let accuracy = position.coords.accuracy;
     // log current position
+    console.log({accuracy});
     console.log({currentLatitude});
     console.log({currentLongitude});   
     
@@ -155,20 +161,16 @@ function goToEditProfile() {
     function runRandomize() {
         // console.log('Kun en test'); // denne funker!!
         for(let i =0 ; i < 1000; i++){
-            
-           let random1 = Math.floor(Math.random() * 2)
-           random2 = Math.floor(Math.random() * 2)
-
+            // denne randomiserer kun tallet 0 og 1
+           let random1 = Math.floor(Math.random() * model.users[0].positionOnMap.length)
+           random2 = Math.floor(Math.random() * model.users[0].positionOnMap.length)
            let tmp = random1
-
            random1 = random2
            random2 = tmp
         }
         
         console.log({random2});
 
-        
-        
 
     }
 
