@@ -6,15 +6,17 @@ model.users = [
    // chat:["hei","hallo"],
 
    personId: 0,   
-   firstName: 'Team1',
-   lastName: 'bestTeam',  
-   userName: '0',
-   passWord: 'pw123',   
+   firstName: 'truls',
+   lastName: 'wallum',  
+   userName: '33',
+   passWord: '33',   
    gender: 'male', 
-   age: 30,
+   age: 26,
    photos: [],
    mail: 'ActiveUser_@demomail.com', 
    activeSince: '',
+  newFriendsMap: [],
+  kms: 0,
    answers: {  // kun for demo, skal være tom.
       Q1: [''],
       Q2: [''],
@@ -37,7 +39,7 @@ model.users = [
       //dummy
       // chat:[{id:1,text:"hei"},{id:2,text:"hei"}],
      personId: '',   
-     firstName: 'truls',
+     firstName: 'henrik',
      lastName: 'lastName_d1',  
      userName: '11',
      passWord: '11',   
@@ -46,6 +48,8 @@ model.users = [
      photos: [],
      mail: 'demo_1@demomail.com', 
      activeSince: '',
+     newFriendsMap: [],
+     kms: 0,
      answers: {  // kun for demo, skal være tom.
         Q1: ['sove', 'gå tur', 'være med venner'],
         Q2: ['yoga', 'maling'],
@@ -71,6 +75,9 @@ model.users = [
      photos: [],
      mail: 'demo_2@demomail.com', 
      activeSince: '',
+     newFriendsMap: [],
+     kms: 0,
+     yourpossesionOnMap: '',
      answers: {
         Q1: ['trene', 'fjellturer', 'være med familie'],
         Q2: ['Gaming', 'Sykling'],
@@ -95,6 +102,8 @@ model.users = [
     photos: [],
     mail: 'demo_3@demomail.com', 
     activeSince: '',
+    newFriendsMap: [],
+    kms: 0,
     answers: {
       Q1: ['trene', 'fjellturer', 'være med familie'],
       Q2: ['Gaming', 'Sykling'],
@@ -120,6 +129,8 @@ model.users = [
          photos: [],
          mail: 'demo_4@demomail.com', 
          activeSince: '',
+         newFriendsMap: [],
+         kms: 0,
          answers: {
             Q1: ['trene', 'fjellturer', 'være med familie'],
             Q2: ['Gaming', 'Sykling'],
@@ -147,6 +158,8 @@ model.users = [
          photos: [],
          mail: 'thomas79mail@demomail.com', 
          activeSince: '',
+         newFriendsMap: [],
+         kms: 0,
          answers: {
             Q1: ['trene', 'fjellturer', 'være med familie'],
             Q2: ['Gaming', 'Sykling'],
@@ -172,6 +185,8 @@ model.users = [
          photos: [],
          mail: 'thomas79mail@demomail.com', 
          activeSince: '',
+         newFriendsMap: [],
+         kms: 0,
          answers: {
             Q1: ['trene', 'fjellturer', 'være med familie'],
             Q2: ['Gaming', 'Sykling'],

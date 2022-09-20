@@ -33,3 +33,26 @@ html += /*html*/ `
 `;
 return html;
 }
+
+
+function createMapButtons(){
+let html = '';
+html += /*html*/ `
+<div class="buttonList">
+
+<div class="userLoggedInAs"></div> 
+
+
+<button class="globalBtn map" onclick="goToMap()">🗺️</button>
+<button class="globalBtn interests" onclick="goToInterests()">🔔</button>
+<button class="globalBtn aboutMe" onclick="goToHome()">🏠</button>
+<button class="globalBtn editProfile" onclick="goToEditProfile()">⚙</button>
+<button class="globalBtn myFriends" onclick="goToMyFriends()"> 💌</button>
+<input type="range" min="1000" max="10000" id="radiusRange" class="sliderRadius">
+</div>
+
+
+`;
+return html;
+}
+

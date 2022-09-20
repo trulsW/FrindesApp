@@ -133,6 +133,7 @@ function goToInterests(){
 
 function goToHome(){
     model.app.currentPage = 'myProfileView'
+    document.getElementById("map").classList.toggle("map");
     updateView();
 }
 

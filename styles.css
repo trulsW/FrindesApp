@@ -236,6 +236,21 @@ body{
         grid-area: 10 / 2 / span 1 / span 8;
     }
 
+    .sliderRadius {
+        /* The syntax is grid-row-start / grid-column-start / grid-row-end / grid-column-end.*/
+        /* grid-area: 5 / 2 / span 3 / span 1; */
+
+        position: absolute;
+        /* margin-top: 0;
+        margin-bottom: 20px; */
+        padding-top: 0%;
+        padding-bottom: 80px;
+        left: 0px;
+        top: 0px;
+        z-index: 1000;
+
+    }
+
     .globalBtn{
         background-color: black;
         background: none;

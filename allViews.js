@@ -146,8 +146,8 @@ function createHtmlMapView(){
   html = '';
   html += /*html*/ `
   
-
-   <div class = 'buttonsMap'>${createSameButtons()}</div> 
+  <div class = 'buttonsMap'>${createMapButtons()}</div> 
+   
   `;
 return html;
 

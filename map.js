@@ -49,12 +49,11 @@ const arr = [];
                     
                     //  arr.push(objPosition)
                     
-                     let mainUserlat = model.app.currentPosition.lat 
-                     let mainUserlng = model.app.currentPosition.lng 
                          
-                     let userToCompareAgainst = {lat: model.users[i].positionOnMap[y].lat, lng: model.users[i].positionOnMap[y].lng}
+                        let mainUserCurrentPosition = {lat: model.app.currentPosition.lat, lng: model.app.currentPosition.lng}
+                        let userToCompareAgainst = {lat: model.users[i].positionOnMap[y].lat, lng: model.users[i].positionOnMap[y].lng}
 
-                        haversine_distance(mainUserlat, mainUserlng, userToCompareAgainst )
+                        haversine_distance(mainUserCurrentPosition, userToCompareAgainst, i)
 
                     }     
 
@@ -64,20 +63,24 @@ const arr = [];
     }
         // console.log(arr);
 
-function haversine_distance(mainUserlat, mainUserlng, userToCompareAgainst) {
-        // console.log(mainUserlat, mainUserlng, userToCompareAgainst);
-        // console.log(mainUserlng); // funker
+function haversine_distance(mainUserCurrentPosition, userToCompareAgainst, i) {
+        // console.log('mainUserCurrentPosition-----------------------------------');
+        // console.log(mainUserCurrentPosition.lat, mainUserCurrentPosition.lng);
+        // console.log('userToCompareAgainst-----------------------------------');
 
-            var R = 3958.8; // Radius of the Earth in miles
+        // console.log(userToCompareAgainst.lat, userToCompareAgainst.lng);
+        
+
+            var R =  6371; // Radius of the Earth in kilometres
 
 
-        var rlat1 = mainUserlat * (Math.PI/180); // Convert degrees to radians
+        var rlat1 = mainUserCurrentPosition.lat * (Math.PI/180); // Convert degrees to radians
         // console.log(rlat1);
         var rlat2 =  userToCompareAgainst.lat * (Math.PI/180); // Convert degrees to radians
         // console.log({rlat2});
         var difflat = rlat2-rlat1; // Radian difference (latitudes)
         // console.log(difflat);
-        var difflon = userToCompareAgainst.lng - mainUserlng * (Math.PI/180); // Radian difference (longitudes)
+        var difflon = (userToCompareAgainst.lng - mainUserCurrentPosition.lng) * (Math.PI/180); // Radian difference (longitudes)
         // console.log(userToCompareAgainst.lng);
         // console.log(mainUserlng);
         // console.log({difflon});    
@@ -85,12 +88,35 @@ function haversine_distance(mainUserlat, mainUserlng, userToCompareAgainst) {
         
 
         
-        // console.log(d * 1.6);
+        // console.log(R);
         // // return d * 1.6;
+        // console.log(d); // KIloMeter !!!..
+
+        if(d < 5 ) {
+               
+           
+        
+            let objectListOfMapPersons = {
+                    firstName: model.users[i].firstName, 
+                    lastName: model.users[i].lastName, 
+                    age: model.users[i].age, 
+                    kms: d.toFixed(2),
+                };
+
+                let index = model.app.currentUser;
+                model.users[index].newFriendsMap.push(objectListOfMapPersons);
+
+            // console.log(index);
+            // console.log(objectListOfMapPersons);
+
+            
+        }
 
         
         
       }
+
+
 
     function start() {
         
@@ -99,15 +125,17 @@ function haversine_distance(mainUserlat, mainUserlng, userToCompareAgainst) {
         
         let mk1 = {lat: model.app.currentPosition.lat, lng: model.app.currentPosition.lng}
         let mk2 =  {lat: model.users[6].positionOnMap[0].lat, lng: model.users[6].positionOnMap[0].lng}
-        console.log(mk1, mk2);
+        // console.log({mk2});
         haversine_distance2(mk1, mk2)
     }, 2000);
+    
     }
 
 
      // må teste noe.
         function haversine_distance2(mk1, mk2) {
-            var R = 3958.8; // Radius of the Earth in miles
+
+            var R = 6371; // Radius of the Earth in kilometres
             var rlat1 = mk1.lat * (Math.PI/180); // Convert degrees to radians
             var rlat2 = mk2.lat * (Math.PI/180); // Convert degrees to radians
             var difflat = rlat2-rlat1; // Radian difference (latitudes)
@@ -115,7 +143,7 @@ function haversine_distance(mainUserlat, mainUserlng, userToCompareAgainst) {
       
             var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
             
-            console.log(d * 1.6);
+            // console.log(d);
 
             // firstname_d3 = 16km , index 3
             // team1 = 14km, index 0
@@ -203,6 +231,8 @@ var marker = new google.maps.Marker({
   });
   circle.bindTo('center', marker, 'position');
 
+
+   
     
 
 //   var line = new google.maps.Polyline({path: [dakota, frick], map: map});
@@ -235,18 +265,50 @@ var marker = new google.maps.Marker({
                 // url: currMarker[3],
                 url: "img/star.png",
                 scaledSize: new google.maps.Size(38, 31),
+                
             },
             description: 'Nothing to describe yet',
             title: model.users[i].firstName,
 
             id: i,
+            
         });
+
+    
+
 
         let infowindow = new google.maps.InfoWindow({
-            content: model.users[i].firstName
-        });
 
-   
+            
+            // content: model.users[i].firstName +  ' ' + model.users[i].lastName
+            content: `Navn: ${model.users[i].firstName} ${model.users[i].lastName}<br>
+                      Alder: ${model.users[i].age} <br>
+                      kms:    ${!model.users[i].kms ? '' :  model.users[i].kms} <br>
+                      SistPålogget: ${model.users[i].activeSince} <br>
+                      Kjønn: ${model.users[i].gender = 'male' ? 'mann' : 'Kvinne'} <br>
+                      <p>
+                      
+                      <button onclick="goToHome()">Se Mer</button>  
+            
+                      ` 
+                     ////////7/ Butten knapp function må endres på. til et annent view.......//////////
+            //Dette er en onclick test via navn///////
+
+        });
+        // google.maps.event.addListener(markers[i], 'click', function(){
+        //     infowindow.setContent(model.users[i].firstName);
+        //     window.open(marker.url)
+        // });
+        // google.maps.event.addDomListener(window, 'load', initMap);
+       
+       
+        markers[i].addListener("click", () => {
+            infowindow.open({
+                anchor: markers[i],
+                map,
+                shouldFocus: false,
+            });
+        })
     }
 
 
