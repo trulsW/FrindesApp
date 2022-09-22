@@ -12,7 +12,7 @@ function checkLogin(){
             if(model.inputs.login.userName === model.users[i].userName && model.inputs.login.passWord === model.users[i].passWord) {
                 console.log('-------- Username & Password check --------');
                 console.log({user});
-                indexUsers() // calling function to index users
+                // indexUsers() // calling function to index users
                 model.app.currentUser = model.users[i].personId
                 // model.app.loggedIn = true;
                 model.app.currentPage = 'myProfileView'; 
@@ -79,25 +79,6 @@ function showPosition(position) {
 }
 
 
-
-
-
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////
-
-
-// Thomas forslag: ---------------------------------------------------------------
-// ha en div ell noe som viser hvem som har logget inn etter passord match o.s.value
-// må ta i bruk setInterval() for at de skal rekke å se det, 3 sekunder, som de meldingen str fremme ..
-//-----------------------------------------------------------------------------------
-
-//Dette er for Registrerings sider.....
-
 function cangeSiteRegister(){
     model.app.currentPage = 'newSiteRegister';
     updateView();
@@ -109,9 +90,31 @@ function cangeSiteRegister(){
     model.app.currentPage = 'newSiteRegister1';
     updateView();
 }
+//Knappen som går vidre til neste side........
+function changeSiteRegister1(){
+    model.app.currentPage = 'newSiteRegister2';
+    updateView();
+}
+
+
+//Neste side for registering
+function createNewRegisterSite2(){
+    model.app.currentPage = 'newSiteRegister2';
+    updateView();
+}
 
 
 
+function changeSiteRegister2(){
+    model.app.currentPage = 'newSiteRegister3';
+    updateView();
+}
+////////////////////////////////////////////
+function fromeRegToMain(){
+    model.app.currentPage = 'myProfileView';
+    alert("Du er nå på Klickit siden");
+    updateView();
+}
 // Dette er for mapViewController
 
 function goToMap(){
@@ -158,7 +161,7 @@ function goToEditProfile() {
     }         
     let random2 = null;
     let count = 0;
-
+    
     function runRandomize() {
         // console.log('Kun en test'); // denne funker!!
         for(let i =0 ; i < 1000; i++){
@@ -169,11 +172,69 @@ function goToEditProfile() {
            random1 = random2
            random2 = tmp
         }
-        
-        console.log({random2});
-
+        // console.log(random2);
+        return random2;
 
     }
 
+    function isMale(checkbox) {
+        // model.inputs.editNewUser.isMale = checkbox.checked;
+        model.inputs.editNewUser.isMaleChecked != true ? true : false;
+        // model.inputs.editNewUser.isMaleChecked = true;
+        
+        
+    }
 
+    function isFemale() {
+        
+    }
+
+
+                function calcAge(calendar) {
+            
+                model.inputs.editNewUser.birthYear = parseInt(calendar.value.substr(0, 4)); // 2022
+                    console.log( model.inputs.editNewUser.birthYear);
+              
+                const today = new Date();
+                let year = today.getFullYear();
+            //regener ut datoen fra idag til din førdselsdag. regner dette ut i år......
+                model.inputs.editNewUser.age = year - model.inputs.editNewUser.birthYear
+              console.log( model.inputs.editNewUser.age);
+      
+
+      
+    }
     
+    function createUser() {
+
+
+        let newUser = {
+            firstname: '', 
+            lastName: '',
+            userName: '',
+            passWord: '',
+            gender: '',
+            age: '',
+            photos: '',
+            mail: '',
+            firstTimeRegistered: '',
+            activeSince: '',
+            newFriendsMap:'',
+            kms: '',
+            answers: '',
+            
+        };
+
+
+
+        newUser.personId = model.app.userIndex;
+        newUser.photos = []
+        newUser.firstname = 'thomas';
+        model.users.push(newUser)
+        model.app.userIndex++
+        model.app.currentPage = 'newSiteRegister2';
+        updateView();
+    }
+
+
+  

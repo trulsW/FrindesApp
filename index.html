@@ -43,9 +43,14 @@
             if(model.app.currentPage == 'editProfile') html = createHtmlEditProfile();
             if(model.app.currentPage == 'newFriends') html = createHtmlNewFriends();
              //fortsettelse på registrering
+             //Kjønn og andre kjønn du vil krysse veien med
              if(model.app.currentPage == 'newSiteRegister') html = createNewRegisterSite();
+             //Registrering med epost og navn
              if(model.app.currentPage == 'newSiteRegister1') html = createNewRegisterSite1();
-
+             // Dine interesser spørsmål
+             if(model.app.currentPage == 'newSiteRegister2') html = createNewRegisterSite2();
+              //implomentere et bilde til brukeren din....
+              if(model.app.currentPage == 'newSiteRegister3') html = createNewRegisterSite3();
             document.getElementById("app").innerHTML = html;
         }
 </script>

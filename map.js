@@ -109,8 +109,11 @@ function haversine_distance(mainUserCurrentPosition, userToCompareAgainst, i) {
             // console.log(index);
             // console.log(objectListOfMapPersons);
 
-            
+    
         }
+
+
+        
 
         
         
@@ -226,14 +229,13 @@ var marker = new google.maps.Marker({
   // Add circle overlay and bind to marker
   var circle = new google.maps.Circle({
     map: map,
-    radius: 5000,    // meter
+    radius: model.inputs.rangeRadius,    // meter
     fillColor: '#AA0000'
   });
   circle.bindTo('center', marker, 'position');
 
 
-   
-    
+
 
 //   var line = new google.maps.Polyline({path: [dakota, frick], map: map});
 
@@ -251,34 +253,99 @@ var marker = new google.maps.Marker({
     map.setMapTypeId("satellite")
     map.setTilt(45);
    
+   
+    // console.log(index);
+
+
+
+
+
 
     //Forloop for alle brukerene sine possisjoner/// Inkluderer bilde og navn
      let markers = [];
+     let index = 0;
 
     for(let i = 0; i < model.users.length; i++) {
-        const pos = new google.maps.LatLng(model.users[i].positionOnMap[1].lat, model.users[i].positionOnMap[1].lng);
-     
+        index = runRandomize() // til vurdering//
+        console.log('Index inne i loopen: ' + index);
+        const pos = new google.maps.LatLng(model.users[i].positionOnMap[index].lat, model.users[i].positionOnMap[index].lng);
+         
         markers[i] = new google.maps.Marker({
             position: pos,
             map: map,
             icon:  {
                 // url: currMarker[3],
-                url: "img/star.png",
+                url:  "img/star.png",
                 scaledSize: new google.maps.Size(38, 31),
                 
             },
+
+        
+               
+
             description: 'Nothing to describe yet',
             title: model.users[i].firstName,
 
             id: i,
+
+
             
         });
+
+
+
+        //Teste ut om man kan bytte ut bilde med mouseover på map////////
+
+
+
+//Dette er en hover over test for bilder på kartet//////
+
+
+// var icon1 = "imageA.png";
+// var icon2 = "imageB.png";
+
+// var marker = new google.maps.Marker({
+//     position: myLatLng,
+//     map: map,
+//     icon: icon1,
+//     title: "some marker"
+// });
+
+// google.maps.event.addListener(marker, 'mouseover', function() {
+//     marker.setIcon(icon2);
+// });
+// google.maps.event.addListener(marker, 'mouseout', function() {
+//     marker.setIcon(icon1);
+// });
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+   //Teste ut mouseover for og få bilde når musen er over stjernen////////
+   //////////////////////////////////////////////////////////////////////
+    
+
+//    google.maps.event.addListener(marker, 'mouseover', function(event){
+//     this.setIcon("img/cat.jpg")
+// });
+
+// google.maps.event.addListener(marker, 'mouseout', function(event) {
+//     this.setIcon('img/star.png');
+// });
+
+
+
+
 
     
 
 
         let infowindow = new google.maps.InfoWindow({
 
+        
             
             // content: model.users[i].firstName +  ' ' + model.users[i].lastName
             content: `Navn: ${model.users[i].firstName} ${model.users[i].lastName}<br>
@@ -301,6 +368,15 @@ var marker = new google.maps.Marker({
         // });
         // google.maps.event.addDomListener(window, 'load', initMap);
        
+
+     
+        // assuming you also want to hide the infowindow when user mouses-out
+        // marker.addListener('mouseout', function() {
+        //     infowindow.close();
+        // });
+
+
+
        
         markers[i].addListener("click", () => {
             infowindow.open({
@@ -313,9 +389,11 @@ var marker = new google.maps.Marker({
 
 
 
-}
+    console.log({markers});
 
-   goToRandomize();
+
+
+}
      
   
 

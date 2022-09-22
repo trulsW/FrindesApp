@@ -15,7 +15,7 @@ const model = {
             currentPage: 'login', // login, mapView, myProfileView, register, newFriends
             currentUser: 1,
             currentPosition: {lat: 0, lng: 0 }, 
-            
+            userIndex:  7,
 
             loggedIn: '', // true / false
             // listOfPages: ["login", "mainPage", "registerPage"]
@@ -31,14 +31,24 @@ const model = {
                     userName: '',
                     passWord: '',
                     gender: '', 
-                    age: 0, // her kan det kjøres en funksjon direkte.
                     photos: [],
                     mail: '', 
                     aboutMe: '',
+                    birthYear: null,
+                    dateRegistered: '',
+                    age: 0, // her kan det kjøres en funksjon direkte.
+                    activeSince: '',
+                    location: '',
+                    isMaleChecked: false,
+                    isFemaleChecked: false,
+                    interestedInMalesChecked: false,
+                    interestedInFemalesChecked: false,
+
+
                 },
                 
            
-                edit: {
+            edit: {
                  Name: '',
                  aboutMe: '',
                  photos: [],
@@ -51,15 +61,15 @@ const model = {
                 },
     
             login: {
-                userName: '',
-                passWord: '',
-            },
-            
+                    userName: '',
+                    passWord: '',
+                },
+
             matched: {
-                chatBox: '',
-            },
+                    chatBox: '',
+                },
             
-            
+            rangeRadius: 5000,
         },
     
     // data

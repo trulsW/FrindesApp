@@ -61,6 +61,14 @@ return html
 // registrere bruker første spørsmål
 
 function createHtmlRegister() {
+  const checkedIsMale = model.inputs.editNewUser.isMale ? '"checked="checked"' : '';
+
+  
+
+
+    console.log(checkedIsMale);
+
+
   console.log('Currently at createHtmlRegister');
   html = '';
  
@@ -68,14 +76,14 @@ function createHtmlRegister() {
   <div class="grid-container">
   
   <div class="registerMF">
-  <h3 onclick="firstQ1()">Du er?</h3>
+  <h3>Du er?</h3>
   
   <label class="checkContainRadio">En Mann
-  <input type="radio" name="radioMF">
+  <input id="radioMale" onchange="isMale(this)" type="radio" ${checkedIsMale} name="radioMF">
   <span class="checkmarkRadio"></span>
   </label><br>
   <label class="checkContainRadio">En Kvinne
-  <input type="radio" name="radioMF">
+  <input onclick="newUser('female')" id="radioFemale" type="radio" name="radioMF">
   <span class="checkmarkRadio"></span>
   </label>
   </div>
@@ -84,11 +92,11 @@ function createHtmlRegister() {
   <h3>Du ønsker og krysse veien med:</h3>
   
   <label class="checkContain">Menn
-  <input type="checkbox">
+  <input onclick="newUser('interestedInMale')" type="checkbox">
   <span class="checkmark"></span>
   </label>
   <label class="checkContain">Kvinner
-  <input type="checkbox">
+  <input onclick="newUser('interestedInFemale')" type="checkbox">
   <span class="checkmark"></span>
   </label>
   </div>
@@ -98,37 +106,81 @@ function createHtmlRegister() {
   </div>
   
   `
+
+  console.log(document.getElementById("radioMale")); 
   return html; // så returnerver vi innholdet av html variabel tilbake i en drittfart.
 }
+// console.log(document.getElementById("radioMale")); 
 
 // Registrer bruker andre spørsmål...
 
-
+// oninput="hvor i modellen skal jeg lagre verdien = this.value"
 function createNewRegisterSite1(){
   html = '';
   html += /*html*/ `
   <div class="grid-container">
-  <button onclick="changeSiteRegister1()"> Fortsett til Klickit </button>
 
-<form>
-        <input type="checkbox" id="question1" name="${model.questions[0].Q1}" value="Q1">
-        <label for="question1">halla </label> <br>
+<div class="infoInput1">
+<div class="infoLabel"> <p>Fornavn</p> <input oninput="model.inputs.editNewUser.firstName = this.value" type="text" class="infoTextInput"></input> </div>  
+<div class="infoLabel"> <p>Etternavn</p> <input oninput="model.inputs.editNewUser.lastName = this.value" type="text" class="infoTextInput"></input></div>
+<div class="infoLabel"> <p>E-post adresse</p> <input oninput="model.inputs.editNewUser.mail = this.value" type="mail" class="infoTextInput"></input> </div>
+<div class="infoLabel"> <p>Passord</p> <input oninput="model.inputs.editNewUser.passWord = this.value" type="password" class="infoTextInput"></input> </div>
+<div class="infoLabel"> <p>Sett fødselsdato</p>  <input id="calendarId" oninput="calcAge(this)" type="date" class="infoTextInput"></input> </div>
+</div>    
 
-
-
-</form>
 
 
   
+ 
+  <button onclick="createUser()" class="continue"> Fortsett </button>
+
+  </div>
+
+
   </div>
   `;
 return html;
 
 }
 
+function createNewRegisterSite2(){
+  html = '';
+  html += /*html*/`
+  
+  <h1> Noen spørsmål til deg</h1>   <br>
+
+  <p>Hva liker du å gjøre sosialt / med venner?</p>  <br>
+  <p>Dine alternativer</p> <br>
+
+  <h1> Har du noen hobbyer </h1> <br>
+  <p>Dine alternativer</p> <br>
+
+  <h1>Hvordan er du med mat?</h1> <br>
+  <p>Dine alternativer</p> <br>
+
+  <h1>Hvordan er du med røyk og drikke?</h1> <br>
+  <p>Dine alternativer</p>
+
+  <button onclick="changeSiteRegister2()">Fortsett</button>
+ 
+  
+  `;
+  return html;
+}
 
 
+function createNewRegisterSite3(){
+  html = '';
+  html += /*html*/ `
+  
+  <h1>yoyoyoy</h1>
+  
+  <butten onclick="fromeRegToMain()"> Gå til Klickit </butten>
 
+  `;
+  
+  return html;
+}
 
 
 
@@ -145,8 +197,10 @@ function createHtmlMapView(){
   initMap();
   html = '';
   html += /*html*/ `
-  
+  <input type="range" min="1000" max="10000" value="5000" step="1000" id="radiusRange" class="sliderRadius" oninput="rangeInput(this.value)">
   <div class = 'buttonsMap'>${createMapButtons()}</div> 
+
+  <button onclick="runRandomize()">Test</button>
    
   `;
 return html;
@@ -253,4 +307,34 @@ html += /*html*/ `
 </div> 
 `;
 return html;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -237,19 +237,22 @@ body{
     }
 
     .sliderRadius {
-        /* The syntax is grid-row-start / grid-column-start / grid-row-end / grid-column-end.*/
-        /* grid-area: 5 / 2 / span 3 / span 1; */
+        -webkit-appearance: slider-vertical;
 
         position: absolute;
-        /* margin-top: 0;
-        margin-bottom: 20px; */
+        margin-top: 70%;
+        margin-left: -40px;
         padding-top: 0%;
-        padding-bottom: 80px;
+        padding-bottom: 0px;
         left: 0px;
         top: 0px;
         z-index: 1000;
-
-    }
+        
+        background: #000000;
+        opacity: 0.9;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+      }
 
     .globalBtn{
         background-color: black;
@@ -386,3 +389,32 @@ body{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+  .infoInput1{
+    grid-area: span auto;
+    grid-area: 2 / 4;
+    justify-content: center;
+  }
+
+ .infoTextInput{
+    height: 25px;
+    width: 150px;
+    font-size: larger;
+    border-radius: 20px;
+    
+    background: none;
+    color: white;
+    background-color: black;
+    text-align: center;
+ }
+
+ .infoLabel{
+    height: 25px;
+    width: 150px;
+    margin: 50px;
+ }
+ 
+ .infoLabel p {
+    text-align: center;
+ }
+

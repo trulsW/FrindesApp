@@ -8,15 +8,16 @@ model.users = [
    personId: 0,   
    firstName: 'truls',
    lastName: 'wallum',  
-   userName: '33',
-   passWord: '33',   
+   userName: '00',
+   passWord: '00',   
    gender: 'male', 
    age: 26,
    photos: [],
-   mail: 'ActiveUser_@demomail.com', 
+   mail: 'ActiveUser_@demomail.com',
+   firstTimeRegistered: '', 
    activeSince: '',
-  newFriendsMap: [],
-  kms: 0,
+   newFriendsMap: [],
+   kms: 0,
    answers: {  // kun for demo, skal være tom.
       Q1: [''],
       Q2: [''],
@@ -26,8 +27,8 @@ model.users = [
      
    },
    positionOnMap: [
-      { lat: 59.1756864, lng: 10.164633},
-      { lat: 59.3674370, lng: 9.5166592},
+      { lat: 59.127770, lng: 10.211652},    
+      { lat: 59.1356864, lng: 10.1846336},
 
 
    ],
@@ -38,7 +39,7 @@ model.users = [
     {
       //dummy
       // chat:[{id:1,text:"hei"},{id:2,text:"hei"}],
-     personId: '',   
+     personId: 1,   
      firstName: 'henrik',
      lastName: 'lastName_d1',  
      userName: '11',
@@ -46,7 +47,8 @@ model.users = [
      gender: 'male', 
      age: 26,
      photos: [],
-     mail: 'demo_1@demomail.com', 
+     mail: 'demo_1@demomail.com',
+     firstTimeRegistered: '', 
      activeSince: '',
      newFriendsMap: [],
      kms: 0,
@@ -57,15 +59,15 @@ model.users = [
         Q4: ['Røyker ikke', 'Røyker sosialt', 'Drikker sosialt'],
      },
      positionOnMap: [
-      { lat: 59.1196864, lng: 10.1346336},
-      { lat: 59.2296840, lng: 10.1746355},
+      { lat:  59.133328, lng: 10.256946},   
+      { lat: 59.095547,  lng: 10.140676},    
       
      ],
     },
     
     {
       //dummy
-     personId: '',   
+     personId: 2,   
      firstName: 'firstName_d2',
      lastName: 'lastName_d2',  
      userName: '22',
@@ -73,11 +75,11 @@ model.users = [
      gender: 'male', 
      age: 34,
      photos: [],
-     mail: 'demo_2@demomail.com', 
+     mail: 'demo_2@demomail.com',
+     firstTimeRegistered: '', 
      activeSince: '',
      newFriendsMap: [],
      kms: 0,
-     yourpossesionOnMap: '',
      answers: {
         Q1: ['trene', 'fjellturer', 'være med familie'],
         Q2: ['Gaming', 'Sykling'],
@@ -85,14 +87,14 @@ model.users = [
         Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
      },
      positionOnMap: [
-      { lat: 59.1296864, lng: 10.1646336},
-      { lat: 59.2296864, lng: 10.1746336},
+      { lat:  59.121013, lng: 10.237079},   
+      { lat: 59.056931,  lng: 10.301704 },      
      ],
     },
 
    {
       //dummy
-    personId: '',   
+    personId: 3,   
     firstName: 'firstName_d3',
     lastName: 'lastName_d3',  
     userName: '33',
@@ -100,7 +102,8 @@ model.users = [
     gender: 'male', 
     age: 50,
     photos: [],
-    mail: 'demo_3@demomail.com', 
+    mail: 'demo_3@demomail.com',
+    firstTimeRegistered: '', 
     activeSince: '',
     newFriendsMap: [],
     kms: 0,
@@ -111,15 +114,15 @@ model.users = [
       Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
      },
      positionOnMap: [
-      { lat: 59.1456864, lng: 10.1646336},
-      { lat: 59.1496864, lng: 10.1846336},
+      { lat:  59.108305, lng: 10.219830},  
+      { lat: 59.059437,  lng: 10.177148},   
 
      ],
    },
 
       {
          //dummy
-         personId: '',   
+         personId: 4,   
          firstName: 'firstName_d4',
          lastName: 'lastName_d4',  
          userName: '44',
@@ -127,7 +130,8 @@ model.users = [
          gender: 'female', 
          age: 38,
          photos: [],
-         mail: 'demo_4@demomail.com', 
+         mail: 'demo_4@demomail.com',
+         firstTimeRegistered: '', 
          activeSince: '',
          newFriendsMap: [],
          kms: 0,
@@ -138,8 +142,8 @@ model.users = [
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
          positionOnMap: [
-         { lat: 59.1296864, lng: 10.1646336},
-         { lat: 59.2096864, lng: 10.2046336},
+         { lat: 59.088838, lng: 10.264449},     
+         { lat: 59.131621, lng: 10.328393},     
 
          ],
 
@@ -148,7 +152,7 @@ model.users = [
 //////////// --------------- laget 2 brukere som thomas bruker til testing. pga gps greine. /////////
       {
          //dummy
-         personId: '',   
+         personId: 5,   
          firstName: 'thomasTest1',
          lastName: 'thomasLastNameTest',  
          userName: 't1',
@@ -156,7 +160,8 @@ model.users = [
          gender: 'male', 
          age: 43,
          photos: [],
-         mail: 'thomas79mail@demomail.com', 
+         mail: 'thomas79mail@demomail.com',
+         firstTimeRegistered: '', 
          activeSince: '',
          newFriendsMap: [],
          kms: 0,
@@ -167,15 +172,15 @@ model.users = [
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
          positionOnMap: [
-            { lat: 59.1396864, lng: 10.2246336},
-            { lat: 59.2674390, lng: 9.9166560},
+            { lat: 59.075255, lng: 10.222564},    
+            { lat: 59.158986, lng: 10.283686},    
          ], // thomas kordinater:
          //{currentLatitude: 59.2674364}
          //{currentLongitude: 9.9166587}
       },
       {
          //dummy
-         personId: '',   
+         personId: 6,   
          firstName: 'thomasTest2',
          lastName: 'thomasLastNameTest',  
          userName: 't2',
@@ -183,7 +188,8 @@ model.users = [
          gender: 'male', 
          age: 43,
          photos: [],
-         mail: 'thomas79mail@demomail.com', 
+         mail: 'thomas79mail@demomail.com',
+         firstTimeRegistered: '', 
          activeSince: '',
          newFriendsMap: [],
          kms: 0,
@@ -194,8 +200,8 @@ model.users = [
             Q3: ['Drikker ofte', 'Drikker sjelden', 'Drikker aldri'],
          },
          positionOnMap: [
-            { lat: 59.1396864, lng: 10.1946336},
-            { lat: 59.2674320, lng: 9.9176599},
+            { lat:  59.104266, lng: 10.293460},     
+            { lat:  59.049387, lng: 10.271369},     
          ],
       },
       
@@ -209,4 +215,7 @@ model.users = [
 
 
 ];
+
+
+
 

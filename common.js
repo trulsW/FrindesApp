@@ -48,7 +48,6 @@ html += /*html*/ `
 <button class="globalBtn aboutMe" onclick="goToHome()">🏠</button>
 <button class="globalBtn editProfile" onclick="goToEditProfile()">⚙</button>
 <button class="globalBtn myFriends" onclick="goToMyFriends()"> 💌</button>
-<input type="range" min="1000" max="10000" id="radiusRange" class="sliderRadius">
 </div>
 
 
