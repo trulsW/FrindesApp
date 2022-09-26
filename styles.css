@@ -1,7 +1,7 @@
 body{
-
     margin: 0 auto;
     }
+
     .container {
         /* height: 100vh; */
         height: 100vh;
@@ -50,7 +50,42 @@ body{
     grid-row-end
     grid-column-end
     */
-    
+
+    /* My profile */
+
+    .testH2{
+        grid-area: 2 / 2 / span auto;
+    }
+
+    h2.Profile{
+        font-size: large;
+    }
+
+
+    img.myProfile{
+        border-radius: 8px;
+        border: 6px outset #3498db;
+    }
+
+    .imgMyProfile{
+        grid-area: 3 / 3 / span 3 / span 5;
+        box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 90%;
+    }
+
+    .aboutMe {
+        grid-area: 6 / 1 / span 1 / span 7;
+    }
+
+
+
+
+
+
+
+
+
+    /* __________________________________________ */
     .buttonList{
         position: fixed;
         z-index: 3000;
@@ -194,7 +229,7 @@ body{
    
     
     
-    h1 {
+    h1.gradient {
         grid-area: 3 / 3 / span 2 / span 6;
         color: hsl(0, 0%, 30%);
         font-size: 90%;
@@ -417,4 +452,3 @@ body{
  .infoLabel p {
     text-align: center;
  }
-

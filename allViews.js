@@ -7,7 +7,7 @@ function createHtmlLogin() {
 
   <div class="grid-container">
 
-  <h1 class="login_page_klickit_logo">Klickit</h1>
+  <h1 class="gradient login_page_klickit_logo">Klickit</h1>
     
 
 
@@ -30,25 +30,32 @@ return html;
 
 }
 
+
+
 // dette er din hjemme profil
 //Dette er bilde av et hus
+// <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
 function createHtmlMyProfile() {
   console.log('Currently at createHtmlProfile');
 html = '';
 html = /*html*/ `
-
 <div class="grid-container">
-<div>vi er nå på myProfileView</div>
+      <div class="testH2">  
+      <h2 class="Profile"> Navn; ${model.users[model.app.currentUser].firstName}  Alder; ${model.users[model.app.currentUser].age}</h2> 
+      </div>
+
+      <div class="imgMyProfile"> <img class="myProfile" src=" ${model.users[model.app.currentUser].photos}"  width="100%" height="100%"> </div>
+
+
+     <div class="aboutMe">om deg selv:</div>
+
+     <div>Dine interesser ${model.users[model.app.currentUser].answers.Q2}</div>
+
+
+
+
+
 <div class="userLoggedInAs"></div> 
-
-
-
-
-
-
-
-
-
 <div class = 'buttons'>${createSameButtons()}</div> 
 </div>
 
@@ -61,15 +68,14 @@ return html
 // registrere bruker første spørsmål
 
 function createHtmlRegister() {
-  const checkedIsMale = model.inputs.editNewUser.isMale ? '"checked="checked"' : '';
+  console.log('Currently at createHtmlRegister');
 
-  
+  const checkedIsMale = model.inputs.editNewUser.isMale ? 'checked' : '';
 
 
     console.log(checkedIsMale);
 
 
-  console.log('Currently at createHtmlRegister');
   html = '';
  
   html += /*html*/ `
@@ -79,11 +85,12 @@ function createHtmlRegister() {
   <h3>Du er?</h3>
   
   <label class="checkContainRadio">En Mann
-  <input id="radioMale" onchange="isMale(this)" type="radio" ${checkedIsMale} name="radioMF">
+ <!-- <input id="radioMale" onchange="selectSex('male')" type="radio" name="radioMF"> -->
+  <input id="radioMale" onchange="selectSex('male')" type="radio" value="" name="radioMF">
   <span class="checkmarkRadio"></span>
   </label><br>
   <label class="checkContainRadio">En Kvinne
-  <input onclick="newUser('female')" id="radioFemale" type="radio" name="radioMF">
+  <input id="radioFemale" onchange="selectSex('female')"  type="radio"  name="radioMF">
   <span class="checkmarkRadio"></span>
   </label>
   </div>
@@ -92,11 +99,11 @@ function createHtmlRegister() {
   <h3>Du ønsker og krysse veien med:</h3>
   
   <label class="checkContain">Menn
-  <input onclick="newUser('interestedInMale')" type="checkbox">
+  <input id="checkMale" onchange="newUser(this)" type="checkbox" value="male">
   <span class="checkmark"></span>
   </label>
   <label class="checkContain">Kvinner
-  <input onclick="newUser('interestedInFemale')" type="checkbox">
+  <input id="checkFemale" onchange="newUser(this)" type="checkbox" value="female">
   <span class="checkmark"></span>
   </label>
   </div>
@@ -146,24 +153,25 @@ return html;
 function createNewRegisterSite2(){
   html = '';
   html += /*html*/`
-  
-  <h1> Noen spørsmål til deg</h1>   <br>
+  <div class="grid-container">
+
+  <h1 class="h1Register2"> Noen spørsmål til deg</h1>   <br>
 
   <p>Hva liker du å gjøre sosialt / med venner?</p>  <br>
   <p>Dine alternativer</p> <br>
 
-  <h1> Har du noen hobbyer </h1> <br>
+  <h1 class="h1Register2"> Har du noen hobbyer </h1> <br>
   <p>Dine alternativer</p> <br>
 
-  <h1>Hvordan er du med mat?</h1> <br>
+  <h1 class="h1Register2">Hvordan er du med mat?</h1> <br>
   <p>Dine alternativer</p> <br>
 
-  <h1>Hvordan er du med røyk og drikke?</h1> <br>
+  <h1 class="h1Register2">Hvordan er du med røyk og drikke?</h1> <br>
   <p>Dine alternativer</p>
 
   <button onclick="changeSiteRegister2()">Fortsett</button>
  
-  
+  </div>
   `;
   return html;
 }
@@ -172,11 +180,15 @@ function createNewRegisterSite2(){
 function createNewRegisterSite3(){
   html = '';
   html += /*html*/ `
-  
+  <div class="grid-container">
+
+
   <h1>yoyoyoy</h1>
   
   <butten onclick="fromeRegToMain()"> Gå til Klickit </butten>
 
+
+  </div>
   `;
   
   return html;
@@ -197,15 +209,17 @@ function createHtmlMapView(){
   initMap();
   html = '';
   html += /*html*/ `
-  <input type="range" min="1000" max="10000" value="5000" step="1000" id="radiusRange" class="sliderRadius" oninput="rangeInput(this.value)">
+ 
   <div class = 'buttonsMap'>${createMapButtons()}</div> 
 
-  <button onclick="runRandomize()">Test</button>
    
   `;
 return html;
 
 }
+//  <input type="range" min="1000" max="10000" value="5000" step="1000" id="radiusRange" class="sliderRadius" oninput="rangeInput(this.value)">
+
+
 // Her kan du se om hvem som er dine interesser
 function createHtmlMatchBox(){
   html = '';
@@ -242,13 +256,13 @@ function createHtmlNewFriends(){
   console.log('Currently at createHtmlNewFriends');
     html = '';
     html += /*html*/ `
-    
-    
     <div class="grid-container">
+
+
 <table class="friendsTableLeft" style="width:100%">
-<h2 class='friend'> Mine venner </h2> 
+<h2 class='friend'> Mine Klickit </h2> 
 <tr>
-    <th> navn </th>
+    <th> navn </th>            
     <th> Alder </th>
     <th> Land </th>
 </tr>
@@ -286,12 +300,11 @@ function createHtmlNewFriends(){
 </table>
 
 <div class = 'buttons'>${createSameButtons()}</div> 
+
+
+
 </div>
-
-
-
     `;
-
 
   return html;
 }
@@ -308,33 +321,60 @@ html += /*html*/ `
 `;
 return html;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+function createUserProfileView(){
+  let i = model.app.currentStarUser;
+  console.log(model.app.currentStarUser);
+  // console.log(i);
+  html = '';
+  html += /*html*/ `
+  <div class="grid-container">
+
+  
+  <h2 class="Profile"> Navn: ${model.users[i].firstName}  Alder: ${model.users[i].age} </h2> 
+  </div>
+
+  <div class="imgMyProfile"> <img class="myProfile" src="${model.users[i].photos}"  width="100%" height="100%"> </div>
+
+
+ <div class="aboutMe">om deg selv: ${model.users[i].answers.Q1[0]}</div>
+
+ 
+ <div class = 'buttons'>${createSameButtons()}</div> 
+
+
+ </div>
+  `;
+  return html;
+}
+
+// <!--<div>Dine interesser ${clickedStarUserInterest} </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

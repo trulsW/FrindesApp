@@ -353,15 +353,29 @@ var marker = new google.maps.Marker({
                       kms:    ${!model.users[i].kms ? '' :  model.users[i].kms} <br>
                       SistPålogget: ${model.users[i].activeSince} <br>
                       Kjønn: ${model.users[i].gender = 'male' ? 'mann' : 'Kvinne'} <br>
+                      Bruker.nr: ${model.app.currentStarUser = i}  
                       <p>
                       
-                      <button onclick="goToHome()">Se Mer</button>  
-            
+                      <button onclick="goToUserView(${i})">Se Mer</button>  
+            -
+                       
+                     
+    
+
                       ` 
+                    
+                     
+                      
                      ////////7/ Butten knapp function må endres på. til et annent view.......//////////
             //Dette er en onclick test via navn///////
 
         });
+        //   ${model.app.currentStarUser = i}                       ${showStarUser(i)}
+
+        //  ${clickedStarUserInterest = model.users[i].answers}
+
+
+
         // google.maps.event.addListener(markers[i], 'click', function(){
         //     infowindow.setContent(model.users[i].firstName);
         //     window.open(marker.url)

@@ -7,7 +7,7 @@
     <title>Document</title>
     <script src="model.js"></script>
     <script src="modelUser.js"></script>
-    <script src="superController.js"></script>
+    <script src="superController.js"></script>s
     <script src="common.js"></script>
     <script src="allViews.js"></script>
     <script src="map.js"></script>
@@ -51,7 +51,16 @@
              if(model.app.currentPage == 'newSiteRegister2') html = createNewRegisterSite2();
               //implomentere et bilde til brukeren din....
               if(model.app.currentPage == 'newSiteRegister3') html = createNewRegisterSite3();
-            document.getElementById("app").innerHTML = html;
+                // map users/stjerner sinn map bio. se mer er link til dems bruker
+              if(model.app.currentPage == 'userProfileView') html = createUserProfileView();
+            //   if(model.app.currentPage == 'userProfileView') html = createHtmlMyProfile();
+           
+           
+           
+           
+              document.getElementById("app").innerHTML = html;
+
+
         }
 </script>
 </body>

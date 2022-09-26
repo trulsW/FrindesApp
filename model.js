@@ -9,18 +9,20 @@
 
 
 
+// model.users[model.app.currentUser]
 const model = {
     // app: appens tillstand: sidebyte, 
         app: {
             currentPage: 'login', // login, mapView, myProfileView, register, newFriends
             currentUser: 1,
             currentPosition: {lat: 0, lng: 0 }, 
-            userIndex:  7,
+            currentStarUser: 1,
+            // userIndex:  7,
 
             loggedIn: '', // true / false
             // listOfPages: ["login", "mainPage", "registerPage"]
         },
-    
+        
     // inputs: alt som påvirkes av bruker.    
         inputs: {
             

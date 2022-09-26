@@ -140,6 +140,16 @@ function goToHome(){
     updateView();
 }
 
+function goToUserView(i){
+    console.log(i);
+    model.app.currentStarUser = i;
+    model.app.currentPage = 'userProfileView'
+    document.getElementById("map").classList.toggle("map");
+    updateView();
+}
+
+
+
 function goToMyFriends(){
     model.app.currentPage = 'newFriends'
     updateView();
@@ -177,16 +187,44 @@ function goToEditProfile() {
 
     }
 
-    function isMale(checkbox) {
-        // model.inputs.editNewUser.isMale = checkbox.checked;
-        model.inputs.editNewUser.isMaleChecked != true ? true : false;
-        // model.inputs.editNewUser.isMaleChecked = true;
+    // function isMale(checkbox) {
+    // //    let isMaleChecked = document.getElementById("radioMale")
+    // //    model.inputs.editNewUser.isMale checkbox.checked 
+    
+    
+    //    //    isMaleChecked.checked == false ? isMaleChecked.checked = true : isMaleChecked.checked = false;
+    // //    console.log(isMaleChecked.checked);
+    //     updateView()
+    // }
+
+    // function isFemale(checkbox) {
+
+    //     model.inputs.editNewUser.isFemaleChecked != true ? true : false;
         
-        
+    // }
+
+    function selectSex(sex){
+
+        if(sex == "male"){
+            model.inputs.editNewUser.isMale = sex;
+            model.inputs.editNewUser.isFemaleChecked = "";
+            document.getElementById("radioMale").toggle
+        } 
+        if(sex == "female"){
+            model.inputs.editNewUser.isFemaleChecked = sex;
+            model.inputs.editNewUser.isMale = "";
+            document.getElementById("radioFemale").toggle
+        }
+       
     }
 
-    function isFemale() {
-        
+    function newUser(interestCheck) {
+
+      let maleCheck = model.inputs.editNewUser.interestedInMalesChecked;  
+      let femaleCheck = model.inputs.editNewUser.interestedInFemalesChecked;
+
+      maleCheck || femaleCheck != true ? true : false
+      
     }
 
 
@@ -236,5 +274,6 @@ function goToEditProfile() {
         updateView();
     }
 
-
+  
+    
   
