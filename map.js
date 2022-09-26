@@ -348,16 +348,18 @@ var marker = new google.maps.Marker({
         
             
             // content: model.users[i].firstName +  ' ' + model.users[i].lastName
-            content: `Navn: ${model.users[i].firstName} ${model.users[i].lastName}<br>
+            content: `<div class="mapInfoWindow">
+                      Navn: ${model.users[i].firstName} ${model.users[i].lastName}<br>
                       Alder: ${model.users[i].age} <br>
                       kms:    ${!model.users[i].kms ? '' :  model.users[i].kms} <br>
-                      SistPålogget: ${model.users[i].activeSince} <br>
+                      Sist Pålogget: ${model.users[i].activeSince} <br>
                       Kjønn: ${model.users[i].gender = 'male' ? 'mann' : 'Kvinne'} <br>
                       Bruker.nr: ${model.app.currentStarUser = i}  
                       <p>
                       
                       <button onclick="goToUserView(${i})">Se Mer</button>  
-            -
+                      </div>
+            
                        
                      
     

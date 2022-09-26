@@ -40,16 +40,16 @@ function createHtmlMyProfile() {
 html = '';
 html = /*html*/ `
 <div class="grid-container">
-      <div class="testH2">  
-      <h2 class="Profile"> Navn; ${model.users[model.app.currentUser].firstName}  Alder; ${model.users[model.app.currentUser].age}</h2> 
-      </div>
+ 
+      <div class="Profile"> Navn: ${model.users[model.app.currentUser].firstName}</br>    Alder: ${model.users[model.app.currentUser].age}</div> 
+
 
       <div class="imgMyProfile"> <img class="myProfile" src=" ${model.users[model.app.currentUser].photos}"  width="100%" height="100%"> </div>
 
 
-     <div class="aboutMe">om deg selv:</div>
+     <div class="aboutMe">Om deg selv:<p>${model.users[model.app.currentUser].aboutMe}</p></div>
 
-     <div>Dine interesser ${model.users[model.app.currentUser].answers.Q2}</div>
+     <div class="interests">Dine interesser: <p>${model.users[model.app.currentUser].answers.Q2}</p></div>
 
 
 
@@ -151,25 +151,30 @@ return html;
 }
 
 function createNewRegisterSite2(){
+  let 
   html = '';
   html += /*html*/`
   <div class="grid-container">
 
-  <h1 class="h1Register2"> Noen spørsmål til deg</h1>   <br>
 
-  <p>Hva liker du å gjøre sosialt / med venner?</p>  <br>
-  <p>Dine alternativer</p> <br>
+          <div class="infoInputQ">
 
-  <h1 class="h1Register2"> Har du noen hobbyer </h1> <br>
-  <p>Dine alternativer</p> <br>
+          <div class="regQ"> Noen spørsmål til deg</div><br>   
 
-  <h1 class="h1Register2">Hvordan er du med mat?</h1> <br>
-  <p>Dine alternativer</p> <br>
+          <div class="regQ"> Hva liker du å gjøre sosialt / med venner?</div>   
+          <div class="regAnswer">${model.possibleAnswers.Q1}</div> <br>
 
-  <h1 class="h1Register2">Hvordan er du med røyk og drikke?</h1> <br>
-  <p>Dine alternativer</p>
+          <div class="regQ"> Har du noen hobbyer </div> 
+          <div class="regAnswer">${model.possibleAnswers.Q2}</div>  <br>
 
-  <button onclick="changeSiteRegister2()">Fortsett</button>
+          <div class="regQ"> Hvordan er du med mat?</div> 
+          <div class="regAnswer">${model.possibleAnswers.Q3}</div> <br>
+
+          <div class="regQ">Hvordan er du med røyk og drikke?</div> 
+          <div class="regAnswer">${model.possibleAnswers.Q4}</div> 
+          </div>
+
+  <button class="continue" onclick="changeSiteRegister2()">Fortsett</button>
  
   </div>
   `;
@@ -185,7 +190,7 @@ function createNewRegisterSite3(){
 
   <h1>yoyoyoy</h1>
   
-  <butten onclick="fromeRegToMain()"> Gå til Klickit </butten>
+  <button class="continue" onclick="fromeRegToMain()"> Gå til Klickit </button>
 
 
   </div>
@@ -226,7 +231,25 @@ function createHtmlMatchBox(){
   
   html += /*html*/ `
   <div class="grid-container">
-  <h1>hihi</h1>
+  
+  <div class="notificationList">
+    
+    <div class="singleMsg"> 
+      <img class="msg" src="${model.users[3].photos}">
+      <div class="friendMsg">Fra: ${model.users[3].firstName} <p>Hei, vil du være med på sledetur?</p> </div>
+    </div>
+    
+    <div class="singleMsg2"> 
+      <img class="msg" src="${model.users[0].photos}">
+      <div class="friendMsg">Fra: ${model.users[0].firstName} <p>Yo, ska du være med og fiske?</p> </div>
+    </div>
+
+    <div class="singleMsg3"> 
+      <img class="msg" src="${model.users[2].photos}">
+      <div class="friendMsg">Fra: ${model.users[2].firstName} <p>Bro, vi du bli med på kons</p> </div>
+    </div>
+    
+  </div>
   
   
   
@@ -262,19 +285,19 @@ function createHtmlNewFriends(){
 <table class="friendsTableLeft" style="width:100%">
 <h2 class='friend'> Mine Klickit </h2> 
 <tr>
-    <th> navn </th>            
+    <th> Navn </th>            
     <th> Alder </th>
-    <th> Land </th>
+    <th> Lokasjon </th>
 </tr>
 <tr>
     <td> Ditt Navn </td>
     <td> Din alder </td>
-    <td> Ditt land </td>
+    <td> Ditt Sted </td>
 </tr>
 <tr>
     <td> Ditt Navn </td>
     <td> Din alder </td>
-    <td> Ditt land </td>
+    <td> Ditt Sted </td>
 </tr>
 </table>
 
@@ -299,7 +322,7 @@ function createHtmlNewFriends(){
 
 </table>
 
-<div class = 'buttons'>${createSameButtons()}</div> 
+<div class="buttons">${createSameButtons()}</div> 
 
 
 
@@ -313,10 +336,18 @@ function createHtmlEditProfile(){
 html = '';
 html += /*html*/ `
 <div class="grid-container">
-<h1>Fiks på meg</h1>
 
+      
+             <h3 class="KmRangeTxT">Kilometer avstand</h3>
+     <input class="kmRange" type="range" min="1000" max="10000" value="50"> 
 
-<div class = 'buttons'>${createSameButtons()}</div> 
+           <h3 class="ageRangeTxT">Din aldersgruppe</h3>
+     <input class="ageRange" type="range" min="18" max="99" value="50"> 
+
+         <h3 class="intrestRangeTxT">møtes med felles interesser</h3>
+     <input class="intrestRange" type="range" min="0" max="10" value="50"> 
+
+<div class="buttons">${createSameButtons()}</div> 
 </div> 
 `;
 return html;
@@ -330,18 +361,23 @@ function createUserProfileView(){
   html = '';
   html += /*html*/ `
   <div class="grid-container">
-
   
   <h2 class="Profile"> Navn: ${model.users[i].firstName}  Alder: ${model.users[i].age} </h2> 
-  </div>
+  
 
   <div class="imgMyProfile"> <img class="myProfile" src="${model.users[i].photos}"  width="100%" height="100%"> </div>
 
 
- <div class="aboutMe">om deg selv: ${model.users[i].answers.Q1[0]}</div>
+ <div class="aboutMeLiking">About Me: <p>${model.users[i].aboutMe}</p></div>
+
+ <div class="interests">Dine interesser: 
+ <p>${model.users[i].answers.Q1}</p>
+ </div>
+
+ <div class="likeOrNot">❤️    ❌</div>
 
  
- <div class = 'buttons'>${createSameButtons()}</div> 
+ <div class="buttons">${createSameButtons()}</div> 
 
 
  </div>

@@ -92,20 +92,20 @@ const model = {
     
         possibleAnswers: {
             Q1: [
-                'A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12'
+                ' fiske', ' danse', ' synge', ' golf', ' bil', ' byen', ' sole seg', ' lese bok', ' film'
             ],
             Q2: [
-                'Jakt og fiske', 'Data & it', 'Gaming', 'Yoga', 'Trening', 'Matlaging', 'Fotografering', 'Skru på bil', 
-                'Hagearbeid', 'Fugletitting', 'Birøkting', 'A12'
+                ' Jakt og fiske', ' Data & it', ' Gaming', ' Yoga', ' Trening', ' Matlaging', ' Fotografering', ' Skru på bil', 
+                ' Hagearbeid', ' Fugletitting'
             ],
             Q3: [
-                'Jeg er kokk', 'Lager middag hver dag', 'Lager aldri mat', 'Bare ferdigmat', 'Aldri ferdigmat', 
-                'Elsker å lage mat', 'Elsker å spise mat', 'Lager middag innimellom', 'Spiser ferdigmat innimellom'
+                ' Jeg er kokk', ' Lager middag hver dag', ' Lager aldri mat', ' Bare ferdigmat',  
+                ' Elsker å spise mat', ' Lager middag innimellom', ' Spiser ferdigmat innimellom'
             ],
             Q4: [
-                'Drikker ofte', 'Drikker sjelden', 'Drikker aldri', 
-                'Røyker en pakke om dagen', 'Røyker en halv pakke om dagen', 
-                'Røyker ikke', 'Røyker sosialt', 'Drikker sosialt'
+                ' Drikker ofte', ' Drikker sjelden', ' Drikker aldri', ' Drikker sosialt',
+                ' Stor røyker', ' Røyker ikke', ' Røyker sosialt'
+                
             ],
         }, 
     };

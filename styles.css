@@ -16,6 +16,13 @@ body{
         height: 100vh;
         width: 100vw;
     }
+
+    .mapInfoWindow {
+        size: 150%;
+        background:rgb(190, 190, 190);
+        padding: 5px;
+        border: solid #3498db 3px;
+    }
     
     .grid-container {
         display: grid;
@@ -43,24 +50,18 @@ body{
             background-position: 0% 50%;
         }
     }
-    /* The syntax is grid-row-start / grid-column-start / grid-row-end / grid-column-end.*/
-    /* 
-    grid-row-start
-    grid-column-start
-    grid-row-end
-    grid-column-end
-    */
+
 
     /* My profile */
 
-    .testH2{
-        grid-area: 2 / 2 / span auto;
+    .Profile{
+        font-size: larger;
+        font-weight: bold;
+        grid-area: 1 / 3 / span 1 / span 4;
+        margin-top: 10%;
+        margin-bottom: 20px;
+        color: #3498db;      
     }
-
-    h2.Profile{
-        font-size: large;
-    }
-
 
     img.myProfile{
         border-radius: 8px;
@@ -68,24 +69,108 @@ body{
     }
 
     .imgMyProfile{
-        grid-area: 3 / 3 / span 3 / span 5;
+        grid-area: 4 / 2 / span 3 / span 6;
         box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        width: 90%;
+        width: 96%;
+        margin-bottom: 25px;
     }
 
     .aboutMe {
-        grid-area: 6 / 1 / span 1 / span 7;
+        grid-area: 7 / 2 / span 3 / span 6;
+        border: solid 2px  #3498db;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #8d8d8d;
+    }
+
+    .interests {
+        grid-area: 2 / 2 / span 2 / span 6 ;
+        border: #3498db solid 2px;
+        margin-bottom: 20px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #8d8d8d;
+    }
+
+ 
+    .aboutMeLiking {
+        grid-area: 7 / 2 / span 1 / span 6;
+        border: solid 2px  #3498db;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #8d8d8d;
+    }
+
+
+    .likeOrNot{
+      grid-area: 9 / 3 / span 1 / span 4 ;  
+      font-size: xx-large;
+      margin-bottom: 50px;
+      letter-spacing: 29px;
+
+    }
+
+    /* __________________________________________ */
+
+    /* NOTIFICATIONS */
+
+    .notificationList{
+        grid-area:  1 / 2 / span 9 / span 6;
+        display: grid;
+        grid-template-columns: repeat(11, 1fr);
+        grid-template-rows: repeat(15, 1fr);
+        margin-top: 40px;
+        border: #3498db solid 5px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .singleMsg {
+        grid-area: 1 / 1 / span 3 / span 13;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin: 20px;
+        border: #3498db solid 2px;
+        background-color: #8d8d8d;
+        border-radius: 10px;
+    }
+    .singleMsg2 {
+        grid-area: 3 / 1 / span 3 / span 13;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin: 20px;
+        border: #3498db solid 2px;
+        background-color: #8d8d8d;
+        border-radius: 10px;
+    }
+    .singleMsg3 {
+        grid-area: 5 / 1 / span 3 / span 13;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin: 20px;
+        border: #3498db solid 2px;
+        background-color: #8d8d8d;
+        border-radius: 10px;
+    }
+
+    img.msg{
+        grid-area: 1 / 1 / span 1 / span 1;
+        border-radius: 100%;
+        height: 55px;
+        width: 60px;
+        border: #3498db dotted 2px;
+        margin: 5px;
+    }
+
+    .friendMsg {
+        grid-area: 1 / 2 / span 1 / span 5;
+        font-size: smaller;
     }
 
 
 
+    /* ______________________________________________________________________________ */
 
-
-
-
-
-
-    /* __________________________________________ */
     .buttonList{
         position: fixed;
         z-index: 3000;
@@ -210,7 +295,7 @@ body{
     }
     
     .login_page_klickit_logo {
-        grid-area: 3 / 4 / span 1 / span 2;
+        grid-area: 3 / 3 / span 2 / span 6;
         background-color: #191919;
         color: white;
         height: 50%;
@@ -230,9 +315,9 @@ body{
     
     
     h1.gradient {
-        grid-area: 3 / 3 / span 2 / span 6;
+        grid-area: 2 / 2 / span 2 / span 6;
         color: hsl(0, 0%, 30%);
-        font-size: 90%;
+        font-size: xx-large;
         font-weight: bold;
         font-family: monospace;
         letter-spacing: 6px;
@@ -339,7 +424,7 @@ body{
 /* Registrerings css */
 
 .continue{
-    grid-area: 9 / 3 / span 1 / span 4;
+    grid-area: 10 / 3 / span 1 / span 4;
     height: 40px;
     width: 100%;
     border-radius: 20px;
@@ -426,9 +511,7 @@ body{
   }
 
   .infoInput1{
-    grid-area: span auto;
-    grid-area: 2 / 4;
-    justify-content: center;
+    grid-area: 1 / 2 / span 4 / span 6;
   }
 
  .infoTextInput{
@@ -452,3 +535,51 @@ body{
  .infoLabel p {
     text-align: center;
  }
+/* Dette er for instillinger meny  teskt format */
+ .KmRangeTxT{
+    grid-area: 3 / 2 / span 3 / span 7;
+ }
+
+ .ageRangeTxT{
+    grid-area: 3 / 2 / span 3 / span 7;
+ }
+
+ .intrestRangeTxT{
+    grid-area: 5 / 2 / span 3 / span 7;
+ }
+
+ /* Dette er for instillinger meny range format */
+
+ .kmRange{
+    grid-area: 4 / 2 / span 1 / span 1;
+
+ }
+
+ .ageRange{
+    grid-area: 1 / 2 / span 4 / span 1;
+
+ }
+
+ .intrestRange{
+    grid-area: 4 / 2 / span 4 / span 1;
+ }
+
+ /* Registerings side med spørsmål alternativer */
+/* hoved spørsmål på siden */
+.infoInputQ{
+    grid-area: 1 / 1 / span 9 / span 8;
+    margin: 40px;
+    text-align: center;
+    background-color: rgb(129, 129, 129);
+    padding: 10px;
+    border: #3498db solid 3px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.regQ{
+   margin-bottom: 10px;
+}
+
+
+  /* første spørsmål  */
